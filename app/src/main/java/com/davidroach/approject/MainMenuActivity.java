@@ -27,6 +27,16 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.view_schedule_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //go to about
+                Intent intent = new Intent(getApplicationContext(), Schedule.class);
+                startActivity(intent);
+
+            }
+        });
+
         findViewById(R.id.about_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
