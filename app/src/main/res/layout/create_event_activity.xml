@@ -4,9 +4,10 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="@string/welcome"
+        android:text="@string/create_event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/title_about_act"
-        android:textSize="28sp" />
+        android:id="@+id/create_event_view"
+        android:textSize="36sp"
+        android:textAlignment="center" />
 </LinearLayout>

@@ -17,8 +17,8 @@
         </activity>
 
 
-        <activity android:name=".AboutActivity"></activity>
-
+        <activity android:name=".About"></activity>
+        <activity android:name=".CreateEvent"></activity>
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>

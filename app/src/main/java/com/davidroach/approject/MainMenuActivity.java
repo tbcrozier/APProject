@@ -1,20 +1,9 @@
 package com.davidroach.approject;
 
 import android.content.Intent;
-import android.location.Address;
-import android.location.Geocoder;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -28,16 +17,25 @@ public class MainMenuActivity extends AppCompatActivity {
         testThread.addressFromCoords(this, 36.533206,-87.353863); //should return 601 college street
 
 
+        findViewById(R.id.create_event_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-            findViewById(R.id.about_button).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //go to about
-                    Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
-                    startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), CreateEvent.class);
+                startActivity(intent);
 
-                }
-            });
+            }
+        });
+
+        findViewById(R.id.about_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //go to about
+                Intent intent = new Intent(getApplicationContext(), About.class);
+                startActivity(intent);
+
+            }
+        });
 
         findViewById(R.id.quit_button).setOnClickListener(new View.OnClickListener() {
             @Override
