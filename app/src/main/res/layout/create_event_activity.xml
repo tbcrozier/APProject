@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/aqua">
+
+    <TextView
+        android:text="@string/create_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_event_view"
+        android:textSize="36sp"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Your Name"
+        android:ems="10"
+        android:id="@+id/your_name_edit_text" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/your_name_button" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Enter game you want to play"
+        android:ems="10"
+        android:id="@+id/what_game_edit_text" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Enter where you want to play"
+        android:ems="10"
+        android:id="@+id/editText3" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3" />
+</LinearLayout>
