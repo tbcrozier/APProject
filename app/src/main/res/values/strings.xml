@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">APProject</string>
+    <string name="welcome">Welcome, lets play!</string>
+    <string name="about">About</string>
+    <string name="create_event">Create an Event</string>
+    <string name="view_event">View Existing Event</string>
+    <string name="quit">Quit</string>
+
+
+    <string name="where">Where</string>
+
+    <string name="schedule">Schedule</string>
 </resources>
