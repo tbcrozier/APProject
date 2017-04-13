@@ -12,51 +12,95 @@
         android:textSize="36sp"
         android:textAlignment="center" />
 
-    <EditText
-        android:layout_width="198dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Your Name"
-        android:ems="10"
-        android:id="@+id/your_name_edit_text" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:hint="@string/name_string"
+            android:id="@+id/enter_your_name_ET" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_string"
+            android:id="@+id/enter_your_name_TV"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
 
     <Button
-        android:text="Button"
+        android:text="@string/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/your_name_button" />
+        android:id="@+id/enter_your_name_button" />
 
-    <EditText
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Enter game you want to play"
-        android:ems="10"
-        android:id="@+id/what_game_edit_text" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:text="Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/enter_sport"
+            android:ems="10"
+            android:id="@+id/enter_game_ET" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Enter where you want to play"
-        android:ems="10"
-        android:id="@+id/editText3" />
+        <TextView
+            android:text="@string/enter_sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/enter_game_TV" />
 
-    <Button
-        android:text="Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button3" />
+
+    </LinearLayout>
 
     <Button
-        android:text="Main Menu"
+        android:text="@string/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/enter_game_button" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/enter_location"
+            android:ems="10"
+            android:id="@+id/enter_location_ET" />
+
+        <TextView
+            android:text="@string/enter_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/enter_location_TV" />
+
+    </LinearLayout>
+
+    <Button
+        android:text="@string/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/enter_location_button" />
+
+    <Button
+        android:text="@string/main_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:layout_marginTop="50dp"
         android:id="@+id/main_menu_button" />
 </LinearLayout>

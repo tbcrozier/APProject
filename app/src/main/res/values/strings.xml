@@ -1,13 +1,26 @@
 <resources>
     <string name="app_name">APProject</string>
     <string name="welcome">Welcome, lets play!</string>
+    <string name="button">Button</string>
+
+
+    <!--About Activity Strings-->
     <string name="about">About</string>
-    <string name="create_event">Create an Event</string>
-    <string name="view_event">View Existing Event</string>
     <string name="quit">Quit</string>
 
+    <!--Activity Main Menu Strings-->
+    <string name="main_menu">Main Menu</string>
+    <string name="create_event">Create an Event</string>
+    <string name="view_event">View Existing Event</string>
 
-    <string name="where">Where</string>
 
+    <!--Schedule Strings-->
     <string name="schedule">Schedule</string>
+
+
+    <!--Create Event Strings-->
+    <string name="name_string">Your Name</string>
+    <string name="enter_sport">Enter Sport</string>
+    <string name="enter_location">Enter Location</string>
+
 </resources>

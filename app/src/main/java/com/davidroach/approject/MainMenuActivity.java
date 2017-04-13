@@ -23,6 +23,8 @@ public class MainMenuActivity extends AppCompatActivity {
         testThread.addressFromCoords(this, 36.533206,-87.353863); //should return 601 college street
 
 
+        //Listeners for MainMenuActivity Menu Buttons
+
         findViewById(R.id.create_event_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
