@@ -23,7 +23,8 @@ public class CreateEvent extends AppCompatActivity {
         setContentView(R.layout.create_event_activity);
 
 
-        //Logic to check the state of save instance state.
+        //Logic to check the state of save instance state. Currently the Data only exists through
+        //   one rotation, if the user rotates back then the data disappears
         if(savedInstanceState == null){
             label1 = " ";
             label2 = " ";
@@ -36,18 +37,14 @@ public class CreateEvent extends AppCompatActivity {
 
         final TextView tv1 = (TextView) findViewById(R.id.enter_your_name_TV);
         final EditText et1 = (EditText) findViewById(R.id.enter_your_name_ET);
-
         tv1.setText("text1");
-
 
         final TextView tv2 = (TextView) findViewById(R.id.enter_game_TV);
         final EditText et2 = (EditText) findViewById(R.id.enter_game_ET);
-
         tv2.setText("text2");
 
         final TextView tv3 = (TextView) findViewById(R.id.enter_location_TV);
         final EditText et3 = (EditText) findViewById(R.id.enter_location_ET);
-
         tv3.setText("text3");
 
         findViewById(R.id.enter_your_name_button).setOnClickListener(new View.OnClickListener(){
@@ -69,8 +66,6 @@ public class CreateEvent extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                TextView tv3 = (TextView) findViewById(R.id.enter_location_TV);
-                EditText et3 = (EditText) findViewById(R.id.enter_location_ET);
                 tv3.setText(et3.getText());
             }
         });
