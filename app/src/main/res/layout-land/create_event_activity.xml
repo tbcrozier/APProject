@@ -32,15 +32,8 @@
             android:id="@+id/enter_your_name_TV"
             android:layout_weight="1" />
 
-
     </LinearLayout>
 
-    <Button
-        android:text="@string/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/yellow"
-        android:id="@+id/enter_your_name_button" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -61,15 +54,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/enter_game_TV" />
 
-
     </LinearLayout>
-
-    <Button
-        android:text="@string/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/yellow"
-        android:id="@+id/enter_game_button" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -97,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/yellow"
-        android:id="@+id/enter_location_button" />
+        android:id="@+id/enter_event_info_button" />
 
     <Button
         android:text="@string/main_menu"
@@ -105,4 +90,5 @@
         android:layout_height="wrap_content"
         android:background="@color/red"
         android:id="@+id/main_menu_button" />
+
 </LinearLayout>
