@@ -20,7 +20,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
     GeoThread testThread = new GeoThread();
-        testThread.addressFromCoords(this, 36.533206,-87.353863); //should return 601 college street
+        //testThread.addressFromCoords(this, 36.533206,-87.353863); //should return 601 college street
 
 
         //Listeners for MainMenuActivity Menu Buttons
