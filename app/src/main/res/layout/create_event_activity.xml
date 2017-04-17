@@ -32,7 +32,7 @@
             android:id="@+id/enter_your_name_ET" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/name_string"
             android:id="@+id/enter_your_name_TV"
@@ -87,23 +87,37 @@
 
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-
     <DatePicker
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/datePicker" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:text="@string/date_string"
+        android:ems="10"
+        android:id="@+id/date_picker_ET" />
+
+    <TimePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Time"
+        android:ems="10"
+        android:id="@+id/time_picker_ET" />
 
     <Button
         android:text="@string/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/enter_event_info_button" />
-
 
     <Button
         android:text="@string/main_menu"
@@ -112,7 +126,7 @@
         android:background="@color/red"
         android:layout_marginTop="50dp"
         android:id="@+id/main_menu_button" />
-</LinearLayout>
 
+</LinearLayout>
 
 </ScrollView>

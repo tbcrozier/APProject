@@ -12,6 +12,7 @@
     <string name="main_menu">Main Menu</string>
     <string name="create_event">Create an Event</string>
     <string name="view_event">View Existing Event</string>
+    <string name="join_event">Join an Event</string>
 
 
     <!--Schedule Strings-->
@@ -22,5 +23,9 @@
     <string name="name_string">Your Name</string>
     <string name="enter_sport">Enter Sport</string>
     <string name="enter_location">Enter Location</string>
+    <string name="date_string"> Date</string>
+
+    <!--Join Strings-->
+    <string name="join">Join</string>
 
 </resources>

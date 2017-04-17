@@ -9,7 +9,6 @@
         android:layout_height="wrap_content"
         android:background="@color/aqua">
 
-
         <TextView
             android:text="@string/create_event"
             android:layout_width="match_parent"
@@ -32,12 +31,11 @@
                 android:id="@+id/enter_your_name_ET" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/name_string"
                 android:id="@+id/enter_your_name_TV"
                 android:layout_weight="1" />
-
 
         </LinearLayout>
 
@@ -59,10 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/enter_game_TV" />
-
-
         </LinearLayout>
-
 
         <LinearLayout
             android:orientation="horizontal"
@@ -86,24 +81,21 @@
         </LinearLayout>
 
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-
         <DatePicker
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/datePicker" />
 
+        <TimePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timePicker" />
 
         <Button
             android:text="@string/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/enter_event_info_button" />
-
 
         <Button
             android:text="@string/main_menu"
@@ -113,6 +105,5 @@
             android:layout_marginTop="50dp"
             android:id="@+id/main_menu_button" />
     </LinearLayout>
-
 
 </ScrollView>
