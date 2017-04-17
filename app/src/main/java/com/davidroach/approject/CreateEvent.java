@@ -4,8 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.CalendarView;
+
+import java.util.Date;
 
 /**
  * Created by TBCJr on 4/6/17.
@@ -47,28 +52,22 @@ public class CreateEvent extends AppCompatActivity {
         final EditText et3 = (EditText) findViewById(R.id.enter_location_ET);
         tv3.setText("text3");
 
-        findViewById(R.id.enter_your_name_button).setOnClickListener(new View.OnClickListener(){
+        final DatePicker dp = (DatePicker) findViewById(R.id.datePicker);
+        final EditText et4 = (EditText) findViewById(R.id.date_picker_ET);
+
+        final TimePicker tp = (TimePicker) findViewById(R.id.timePicker);
+        final EditText et5 = (EditText) findViewById(R.id.time_picker_ET);
+
+        findViewById(R.id.enter_event_info_button).setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View v) {
+
                tv1.setText(et1.getText());
+               tv2.setText(et2.getText());
+               tv3.setText(et3.getText());
+
            }
        });
-
-        findViewById(R.id.enter_game_button).setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                tv2.setText(et2.getText());
-            }
-        });
-
-        findViewById(R.id.enter_location_button).setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                tv3.setText(et3.getText());
-            }
-        });
 
 
 //Return to Main Menu button listener

@@ -25,6 +25,15 @@ public class MainMenuActivity extends AppCompatActivity {
 
         //Listeners for MainMenuActivity Menu Buttons
 
+        findViewById(R.id.join_event_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Join.class);
+                startActivity(intent);
+            }
+        });
+
         findViewById(R.id.create_event_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

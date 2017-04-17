@@ -12,9 +12,6 @@
         android:textSize="36sp"
         android:textAlignment="center" />
 
-
-
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -68,7 +65,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView7" />
         </TableRow>
-
 
     </TableLayout>
 

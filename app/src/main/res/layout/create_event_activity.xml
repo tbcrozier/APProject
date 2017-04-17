@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/aqua">
+
 
     <TextView
         android:text="@string/create_event"
@@ -26,7 +32,7 @@
             android:id="@+id/enter_your_name_ET" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/name_string"
             android:id="@+id/enter_your_name_TV"
@@ -34,12 +40,6 @@
 
 
     </LinearLayout>
-
-    <Button
-        android:text="@string/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/enter_your_name_button" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -63,11 +63,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:text="@string/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/enter_game_button" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -90,11 +85,39 @@
 
     </LinearLayout>
 
+
+
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:text="@string/date_string"
+        android:ems="10"
+        android:id="@+id/date_picker_ET" />
+
+    <TimePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Time"
+        android:ems="10"
+        android:id="@+id/time_picker_ET" />
+
     <Button
         android:text="@string/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/enter_location_button" />
+        android:id="@+id/enter_event_info_button" />
 
     <Button
         android:text="@string/main_menu"
@@ -103,4 +126,7 @@
         android:background="@color/red"
         android:layout_marginTop="50dp"
         android:id="@+id/main_menu_button" />
+
 </LinearLayout>
+
+</ScrollView>

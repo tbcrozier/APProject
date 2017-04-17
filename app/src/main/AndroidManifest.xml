@@ -19,6 +19,7 @@
         <activity android:name=".About"></activity>
         <activity android:name=".CreateEvent"></activity>
         <activity android:name=".Schedule"></activity>
+        <activity android:name=".Join"></activity>
 
     </application>
 

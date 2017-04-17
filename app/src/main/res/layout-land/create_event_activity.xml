@@ -1,108 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/aqua">
-
-    <TextView
-        android:text="@string/create_event"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/create_event_view"
-        android:textSize="26sp"
-        android:textAlignment="center" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="198dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:hint="@string/name_string"
-            android:id="@+id/enter_your_name_ET" />
+        android:layout_height="wrap_content"
+        android:background="@color/aqua">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:text="@string/create_event"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name_string"
-            android:id="@+id/enter_your_name_TV"
-            android:layout_weight="1" />
+            android:id="@+id/create_event_view"
+            android:textSize="36sp"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="198dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="@string/name_string"
+                android:id="@+id/enter_your_name_ET" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/name_string"
+                android:id="@+id/enter_your_name_TV"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/enter_sport"
+                android:ems="10"
+                android:id="@+id/enter_game_ET" />
+
+            <TextView
+                android:text="@string/enter_sport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/enter_game_TV" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/enter_location"
+                android:ems="10"
+                android:id="@+id/enter_location_ET" />
+
+            <TextView
+                android:text="@string/enter_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/enter_location_TV" />
+
+        </LinearLayout>
 
 
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker" />
+
+        <TimePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timePicker" />
+
+        <Button
+            android:text="@string/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enter_event_info_button" />
+
+        <Button
+            android:text="@string/main_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:layout_marginTop="50dp"
+            android:id="@+id/main_menu_button" />
     </LinearLayout>
 
-    <Button
-        android:text="@string/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/yellow"
-        android:id="@+id/enter_your_name_button" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/enter_sport"
-            android:ems="10"
-            android:id="@+id/enter_game_ET" />
-
-        <TextView
-            android:text="@string/enter_sport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/enter_game_TV" />
-
-
-    </LinearLayout>
-
-    <Button
-        android:text="@string/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/yellow"
-        android:id="@+id/enter_game_button" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/enter_location"
-            android:ems="10"
-            android:id="@+id/enter_location_ET" />
-
-        <TextView
-            android:text="@string/enter_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/enter_location_TV" />
-
-    </LinearLayout>
-
-    <Button
-        android:text="@string/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/yellow"
-        android:id="@+id/enter_location_button" />
-
-    <Button
-        android:text="@string/main_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/red"
-        android:id="@+id/main_menu_button" />
-</LinearLayout>
+</ScrollView>
