@@ -24,8 +24,16 @@
     <string name="enter_sport">Enter Sport</string>
     <string name="enter_location">Enter Location</string>
     <string name="date_string"> Date</string>
+    <string name="submit">Submit</string>
+
+    <string name="time">Time</string>
 
     <!--Join Strings-->
     <string name="join">Join</string>
+    <string name="username">Username</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 
 </resources>

@@ -109,20 +109,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Time"
+        android:text="@string/time"
         android:ems="10"
         android:id="@+id/time_picker_ET" />
 
     <Button
-        android:text="@string/button"
+        android:text="@string/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
         android:id="@+id/enter_event_info_button" />
 
     <Button
         android:text="@string/main_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
         android:background="@color/red"
         android:layout_marginTop="50dp"
         android:id="@+id/main_menu_button" />
