@@ -1,5 +1,7 @@
 package com.davidroach.approject;
 
+import android.util.Log;
+
 import java.net.URL;
 
 /**
@@ -13,11 +15,32 @@ public class RestClient {
 
     }
 
-    protected void setupGetConnection(URL urlIn){
+    protected void setupGetConnection(String urlIn){
+        try {
+            URL getEndpoint = new URL(urlIn);
+
+
+        }
+        catch(Exception e){
+            Log.i("ERROR:", e.toString());
+        }
 
     }
 
-    protected void setupPostConnection(URL urlIn){
+    protected void executeRequest(){
+        
+    }
+
+    protected void setupPostConnection(String urlIn){
+        try {
+            URL postEndpoint = new URL(urlIn);
+
+
+
+        }
+        catch(Exception e){
+            Log.i("ERROR:", e.toString());
+        }
 
     }
 
