@@ -1,5 +1,7 @@
 package com.davidroach.approject;
 
+import java.net.URL;
+
 /**
  * Created by droach-dev on 4/17/17.
  */
@@ -8,6 +10,14 @@ public class RestClient {
 
     //constructor
     public RestClient(){
+
+    }
+
+    protected void setupGetConnection(URL urlIn){
+
+    }
+
+    protected void setupPostConnection(URL urlIn){
 
     }
 
