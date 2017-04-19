@@ -21,6 +21,13 @@ public class MainMenuActivity extends AppCompatActivity {
 
     GeoThread testThread = new GeoThread();
         //testThread.addressFromCoords(this, 36.533206,-87.353863); //should return 601 college street
+        RestClient clientTest = new RestClient();
+        //clientTest.getEventRSVP("Rumble at Rucker");  //works
+        //clientTest.getAllEvents();  //works
+        //clientTest.getUserInfo("zoeyr"); //works
+        //clientTest.getAvailableSports(); //works
+        //clientTest.getUserRSVP("zoeyr");  //works
+
 
 
         //Listeners for MainMenuActivity Menu Buttons
