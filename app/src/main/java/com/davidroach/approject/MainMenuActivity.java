@@ -27,6 +27,11 @@ public class MainMenuActivity extends AppCompatActivity {
         //clientTest.getUserInfo("zoeyr"); //works
         //clientTest.getAvailableSports(); //works
         //clientTest.getUserRSVP("zoeyr");  //works
+        //clientTest.getFutureEventsBySport("Basketball");//works
+        //clientTest.getFutureEventsByLocation("Rucker Park"); //works
+         //clientTest.createNewUser("JonJon","FMPasw0rd","Jon","Jonsophan","jonso@mail.com"); //works
+        //clientTest.createNewRSVP("zoeyr","Event 4"); //works
+        //clientTest.createNewEvent();
 
 
 

@@ -7,10 +7,13 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,6 +33,7 @@ public class RestClient {
 
     JsonReader returnedJson = null;
     String result = null;
+    String baseURL = "http://10.247.204.86:8080";
 
     //constructor
     public RestClient(){
@@ -73,9 +77,6 @@ public class RestClient {
 
     }
 
-    protected void createNewUser(String userNameIn, String passwordIn, String firstNameIn, String lastNameIn, String emailIn){
-
-    }
 
     protected ArrayList<String> getAllEvents(){
         String appendUrl = "/events";
@@ -147,7 +148,22 @@ public class RestClient {
 
     }
 
-    protected void createNewRSVP(String userNameIn, String eventNameIn){
+    protected String createNewRSVP(String userNameIn, String eventNameIn){
+        String outMessage = null;
+
+        try {
+            PostConnection postConnection = new PostConnection();
+            String appendUrl = "/rsvp/new/";
+            String urlParams = "username="+userNameIn+"&eventname="+eventNameIn;
+            outMessage = postConnection.execute(appendUrl,urlParams,"RSVP").get();
+        }
+        catch (Exception e){
+            Log.i("POST ERROR: ", e.toString());
+        }
+
+
+
+        return outMessage;
 
     }
 
@@ -218,12 +234,70 @@ public class RestClient {
 
 
 
-    protected void getFutureEventsBySport(String sportNameIn){
+    protected ArrayList<String> getFutureEventsBySport(String sportNameIn){
+        sportNameIn = sportNameIn.replaceAll(" ","%20");
+        String appendUrl = "/sports/eventlist/" + sportNameIn;
+        ArrayList<String> retList = new ArrayList<String>();
 
+
+        GetConnection gconnect = new GetConnection();
+        try {
+            //get returned json string
+            String jsonString = gconnect.execute(appendUrl).get();
+
+            //parse json array.
+            JSONArray jsonarray = new JSONArray(jsonString);
+            for (int i = 0; i < jsonarray.length(); i++) {
+                JSONObject jsonobject = jsonarray.getJSONObject(i);
+
+                //add sport names to array list to be returned.
+                retList.add(jsonobject.getString("EventName"));
+                retList.add(jsonobject.getString("Date"));
+                int x = 1+1;
+                x++;
+            }
+
+            //Log.i("JSONOUT2:",jsonString);
+        }
+        catch (Exception e){
+            //Log.i("ERROR:", e.toString());
+        }
+
+
+        return retList;
     }
 
-    protected void getFutureEventsByLocation(String locationNameIn){
+    protected ArrayList<String> getFutureEventsByLocation(String locationNameIn){
+        locationNameIn = locationNameIn.replaceAll(" ","%20");
+        String appendUrl = "/location/eventlist/" + locationNameIn;
+        ArrayList<String> retList = new ArrayList<String>();
 
+
+        GetConnection gconnect = new GetConnection();
+        try {
+            //get returned json string
+            String jsonString = gconnect.execute(appendUrl).get();
+
+            //parse json array.
+            JSONArray jsonarray = new JSONArray(jsonString);
+            for (int i = 0; i < jsonarray.length(); i++) {
+                JSONObject jsonobject = jsonarray.getJSONObject(i);
+
+                //add sport names to array list to be returned.
+                retList.add(jsonobject.getString("eventname"));
+                retList.add(jsonobject.getString("date"));
+                int x = 1+1;
+                x++;
+            }
+
+            //Log.i("JSONOUT2:",jsonString);
+        }
+        catch (Exception e){
+            //Log.i("ERROR:", e.toString());
+        }
+
+
+        return retList;
     }
 
 
@@ -286,22 +360,71 @@ public class RestClient {
     }
 
 
+
+
+
+    protected String createNewUser(final String userNameIn, final String passwordIn, final String firstNameIn, final String lastNameIn, final String emailIn){
+        String outMessage = null;
+
+        try {
+            PostConnection postConnection = new PostConnection();
+            String appendUrl = "/user/new/";
+            String urlParams = "username="+userNameIn+"&password="+passwordIn+"&firstname="+firstNameIn+"&lastname="+lastNameIn+"&email="+emailIn;
+            outMessage = postConnection.execute(appendUrl,urlParams,"User").get();
+        }
+        catch (Exception e){
+            Log.i("POST ERROR: ", e.toString());
+        }
+
+
+
+        return outMessage;
+    }
+
+
+
+
+
+
     private class PostConnection extends AsyncTask<String, Void, String>{
+
+        String resultString = null;
+        String result = null;
+
 
         @Override
         protected String doInBackground(String... urls){
 
+
+            String baseURL = "http://10.247.204.86:8080";
+            String mergeURL = baseURL + urls[0]; //made for debugging
+
+            Log.i("DEBUG", mergeURL);
+
             try {
-                String result = null;
-                String baseURL = "http://192.168.0.3:8080";
-                String mergeURL = baseURL + urls[0]; //made for debugging
-                Log.i("DEBUG", mergeURL);
+                URL postEndpoint = new URL(mergeURL);
+                HttpURLConnection postConnection = (HttpURLConnection) postEndpoint.openConnection();
+                postConnection.setRequestProperty("User-Agent", "approject-rest-v0.1");
+                postConnection.setRequestMethod("POST");
+                postConnection.setFixedLengthStreamingMode(urls[1].getBytes().length);
+                postConnection.setDoOutput(true);
+
+                DataOutputStream dStream = new DataOutputStream(postConnection.getOutputStream());
+                dStream.writeBytes(urls[1]); //Writes out the string to the underlying output stream as a sequence of bytes<br />
+                dStream.flush(); // Flushes the data output stream.<br />
+                dStream.close(); // Closing the output stream.<br />
+
+
+
+
+
 
             }
             catch(Exception e){
                 Log.i("ERROR:", e.toString());
+                return ("Error Creating "+urls[2]);
             }
-            return null;
+            return (urls[2] + " Created Successfully");
         }
 
 
