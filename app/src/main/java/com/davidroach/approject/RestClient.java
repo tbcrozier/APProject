@@ -33,7 +33,7 @@ public class RestClient {
 
     JsonReader returnedJson = null;
     String result = null;
-    String baseURL = "http://10.247.204.86:8080";
+    String baseURL = "http://107.170.31.121";
 
     //constructor
     public RestClient(){
@@ -311,7 +311,7 @@ public class RestClient {
         protected String doInBackground(String... urls){
 
 
-            String baseURL = "http://10.247.204.86:8080";
+            String baseURL = "http://107.170.31.121";
             String mergeURL = baseURL + urls[0]; //made for debugging
             Log.i("DEBUG", mergeURL);
             StringBuilder jsonOut = null;
@@ -396,7 +396,7 @@ public class RestClient {
         protected String doInBackground(String... urls){
 
 
-            String baseURL = "http://10.247.204.86:8080";
+            String baseURL = "http://107.170.31.121";
             String mergeURL = baseURL + urls[0]; //made for debugging
 
             Log.i("DEBUG", mergeURL);
