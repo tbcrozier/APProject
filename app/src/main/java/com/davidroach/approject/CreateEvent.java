@@ -1,5 +1,6 @@
 package com.davidroach.approject;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
@@ -58,7 +59,7 @@ public class CreateEvent extends AppCompatActivity {
         tv3.setText("text3");
 
         final DatePicker dp = (DatePicker) findViewById(R.id.datePicker);
-        
+
 
         findViewById(R.id.enter_event_info_button).setOnClickListener(new View.OnClickListener(){
            @Override
@@ -71,7 +72,7 @@ public class CreateEvent extends AppCompatActivity {
            }
        });
 
-//Return to Main Menu button listener
+    //Return to Main Menu button listener
         findViewById(R.id.main_menu_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +82,7 @@ public class CreateEvent extends AppCompatActivity {
             }
         });
 
+    //Time Button listener
         findViewById(R.id.btn_time).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,8 +116,40 @@ public class CreateEvent extends AppCompatActivity {
                 timePickerDialog.show();
             }
         });
+    //Date Button Listener
+        findViewById(R.id.btn_date).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Calendar c = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    c = Calendar.getInstance();
+                }
+                final TextView tv_date = (TextView) findViewById(R.id.tv_date);
+                int year = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    year = c.get(Calendar.YEAR);
+                }
+                int month = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    month = c.get(Calendar.MONTH);
+                }
+                int day = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    day = c.get(Calendar.DAY_OF_MONTH);
+                }
 
+                DatePickerDialog datePickerDialog = new DatePickerDialog(CreateEvent.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                tv_date.setText(year + " " + month + ", " + dayOfMonth);
+                            }
+                        },year, month, day);
+                datePickerDialog.show();
+            }
+        });
 
     }
 
@@ -133,6 +167,5 @@ public class CreateEvent extends AppCompatActivity {
         EditText et3 = (EditText) findViewById(R.id.enter_location_ET);
         outState.putString("text3", et3.getText().toString());
     }
-
 
 }
