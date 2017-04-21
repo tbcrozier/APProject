@@ -86,43 +86,65 @@
     </LinearLayout>
 
 
-
-    <DatePicker
+    <!--<DatePicker
+        android:datePickerMode="spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/datePicker" />
-
-    <EditText
+        android:id="@+id/datePicker" />-->
+    <Button
+        android:id="@+id/btn_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:text="@string/date_string"
-        android:ems="10"
-        android:id="@+id/date_picker_ET" />
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:text="Set Date"/>
 
-    <TimePicker
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/timePicker" />
+        android:textSize="16sp"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"/>
 
-    <EditText
-        android:layout_width="match_parent"
+
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Time"
-        android:ems="10"
-        android:id="@+id/time_picker_ET" />
+        android:textSize="16sp"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"/>
 
     <Button
-        android:text="@string/button"
+        android:id="@+id/btn_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:text="Set Time"/>
+
+    <!--<TimePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker" />-->
+
+
+    <Button
+        android:text="@string/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
         android:id="@+id/enter_event_info_button" />
 
     <Button
         android:text="@string/main_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
         android:background="@color/red"
         android:layout_marginTop="50dp"
         android:id="@+id/main_menu_button" />

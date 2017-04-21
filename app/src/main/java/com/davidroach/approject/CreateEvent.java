@@ -1,6 +1,12 @@
 package com.davidroach.approject;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.icu.text.DateFormat;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -53,10 +59,7 @@ public class CreateEvent extends AppCompatActivity {
         tv3.setText("text3");
 
         final DatePicker dp = (DatePicker) findViewById(R.id.datePicker);
-        final EditText et4 = (EditText) findViewById(R.id.date_picker_ET);
 
-        final TimePicker tp = (TimePicker) findViewById(R.id.timePicker);
-        final EditText et5 = (EditText) findViewById(R.id.time_picker_ET);
 
         findViewById(R.id.enter_event_info_button).setOnClickListener(new View.OnClickListener(){
            @Override
@@ -69,8 +72,7 @@ public class CreateEvent extends AppCompatActivity {
            }
        });
 
-
-//Return to Main Menu button listener
+    //Return to Main Menu button listener
         findViewById(R.id.main_menu_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +82,74 @@ public class CreateEvent extends AppCompatActivity {
             }
         });
 
+    //Time Button listener
+        findViewById(R.id.btn_time).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Time Picker Code
+                // Get Current time
+                Calendar c = null;
+                final TextView tv_time = (TextView) findViewById(R.id.tv_time);
+
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    c = Calendar.getInstance();
+                }
+                int hour = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    hour = c.get(Calendar.HOUR_OF_DAY);
+                }
+                int minute = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    minute = c.get(Calendar.MINUTE);
+                }
+
+                TimePickerDialog timePickerDialog = new TimePickerDialog(CreateEvent.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay,
+                                                  int minute) {
+
+                                tv_time.setText(hourOfDay + ":" + minute);
+                            }
+                        }, hour, minute, false);
+                timePickerDialog.show();
+            }
+        });
+    //Date Button Listener
+        findViewById(R.id.btn_date).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Calendar c = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    c = Calendar.getInstance();
+                }
+                final TextView tv_date = (TextView) findViewById(R.id.tv_date);
+                int year = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    year = c.get(Calendar.YEAR);
+                }
+                int month = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    month = c.get(Calendar.MONTH);
+                }
+                int day = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    day = c.get(Calendar.DAY_OF_MONTH);
+                }
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(CreateEvent.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                tv_date.setText(year + " " + month + ", " + dayOfMonth);
+                            }
+                        },year, month, day);
+                datePickerDialog.show();
+            }
+        });
 
     }
 
@@ -97,6 +167,5 @@ public class CreateEvent extends AppCompatActivity {
         EditText et3 = (EditText) findViewById(R.id.enter_location_ET);
         outState.putString("text3", et3.getText().toString());
     }
-
 
 }
