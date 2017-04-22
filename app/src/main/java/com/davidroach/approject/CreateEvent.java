@@ -69,7 +69,7 @@ public class CreateEvent extends AppCompatActivity {
         final EditText et3 = (EditText) findViewById(R.id.enter_location_ET);
         tv3.setText("text3");
 
-
+        CustomSpinner();
 
         findViewById(R.id.enter_event_info_button).setOnClickListener(new View.OnClickListener(){
            @Override
@@ -77,7 +77,6 @@ public class CreateEvent extends AppCompatActivity {
 
                tv1.setText(et1.getText());
                tv2.setText(et2.getText());
-               CustomSpinner();
                tv3.setText(et3.getText());
 
            }
