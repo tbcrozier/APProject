@@ -15,26 +15,42 @@ import java.util.Locale;
 
 public class GeoThread {
 
+    protected Geocoder geocoder;
+    List<Address> fromCoords;
+    List<Address> fromStreet;
 
-    protected void addressFromCoords(Context appContext, double latitude, double longitude){
-        Geocoder geocoder = new Geocoder(appContext, Locale.getDefault());
+    public GeoThread(Context appContext){
+         geocoder = new Geocoder(appContext, Locale.getDefault());
+         fromCoords = null;
+         fromStreet = null;
+    }
 
-        List<Address> returnedAddresses;
 
+    protected List<Address> addressFromCoords(Context appContext, double latitude, double longitude){
         try {
-            returnedAddresses = geocoder.getFromLocation(latitude, longitude, 1);
+            fromCoords = geocoder.getFromLocation(latitude, longitude, 1);
             int x = 1;
+            return fromCoords;
         }
         catch (IOException e){
             Log.i("ERROR",e.toString());
         }
+        return  fromCoords;
+
     }
 
 
-    //will return a street
-    protected double[] coordsToAddress(Context appContext, String addressIn){
-        double[] coordsOut = {1.0,1.0};
-        return coordsOut;
+    //will return latitude and longitude to be added to the database.
+    protected List<Address> coordsFromAddress(Context appContext, String addressIn){
+        try {
+            fromStreet = geocoder.getFromLocationName(addressIn,1);
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+
+        return fromStreet;
 
     }
 }
