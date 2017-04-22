@@ -44,25 +44,27 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="2">
 
-        <EditText
+       <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="@string/enter_sport"
             android:ems="10"
-            android:id="@+id/enter_game_ET" />
+            android:id="@+id/enter_game_ET"
+            android:layout_weight="1" />
+
 
         <TextView
             android:text="@string/enter_sport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/enter_game_TV" />
-
+            android:id="@+id/enter_game_TV"
+            android:layout_weight="1" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:orientation="horizontal"
@@ -85,6 +87,28 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="@string/enter_sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_TV"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
 
     <!--<DatePicker
         android:datePickerMode="spinner"
@@ -98,7 +122,7 @@
         android:background="@color/colorPrimary"
         android:textColor="@color/white"
         android:layout_marginTop="5dp"
-        android:text="Set Date"/>
+        android:text="@string/set_date"/>
 
     <TextView
         android:id="@+id/tv_date"
@@ -110,6 +134,15 @@
 
 
 
+    <Button
+        android:id="@+id/btn_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:text="@string/set_time"/>
+
     <TextView
         android:id="@+id/tv_time"
         android:layout_width="wrap_content"
@@ -118,19 +151,12 @@
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/btn_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/white"
-        android:layout_marginTop="5dp"
-        android:text="Set Time"/>
-
     <!--<TimePicker
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/timePicker" />-->
+
+
 
 
     <Button

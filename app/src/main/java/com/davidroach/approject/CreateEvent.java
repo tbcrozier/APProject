@@ -10,13 +10,18 @@ import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.CalendarView;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by TBCJr on 4/6/17.
@@ -27,6 +32,8 @@ public class CreateEvent extends AppCompatActivity {
     //Variable that holds save instance state
     private int x = 0;
     String label1, label2,label3;
+    private Spinner spinner;
+    private TextView spinnerTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,10 @@ public class CreateEvent extends AppCompatActivity {
         final EditText et1 = (EditText) findViewById(R.id.enter_your_name_ET);
         tv1.setText("text1");
 
+        /* 888888------------------------------------------------------------------------*/
+        spinnerTV = (TextView) findViewById(R.id.spinner_TV);
+        //spinner = (Spinner) findViewById(R.id.spinner);
+
         final TextView tv2 = (TextView) findViewById(R.id.enter_game_TV);
         final EditText et2 = (EditText) findViewById(R.id.enter_game_ET);
         tv2.setText("text2");
@@ -58,7 +69,6 @@ public class CreateEvent extends AppCompatActivity {
         final EditText et3 = (EditText) findViewById(R.id.enter_location_ET);
         tv3.setText("text3");
 
-        final DatePicker dp = (DatePicker) findViewById(R.id.datePicker);
 
 
         findViewById(R.id.enter_event_info_button).setOnClickListener(new View.OnClickListener(){
@@ -67,6 +77,7 @@ public class CreateEvent extends AppCompatActivity {
 
                tv1.setText(et1.getText());
                tv2.setText(et2.getText());
+               CustomSpinner();
                tv3.setText(et3.getText());
 
            }
@@ -168,4 +179,32 @@ public class CreateEvent extends AppCompatActivity {
         outState.putString("text3", et3.getText().toString());
     }
 
+    private void CustomSpinner(){
+        spinner = (Spinner) findViewById(R.id.spinner);
+        List<String> list = new ArrayList<String>();
+        list.add("Basketball");
+        list.add("Football");
+        list.add("Soccer");
+        list.add("Golf");
+        list.add("Frisbee");
+        list.add("Vollyball");
+        ArrayAdapter<String>dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String str = spinner.getSelectedItem().toString();
+                spinnerTV.setText(str);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+    }
 }
