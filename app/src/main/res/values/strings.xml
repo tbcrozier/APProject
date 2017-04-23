@@ -23,6 +23,7 @@
     <string name="name_string">Your Name</string>
     <string name="enter_sport">Enter Sport</string>
     <string name="enter_location">Enter Location</string>
+    <string name="set_location">Set Location</string>
     <string name="date_string"> Date</string>
     <string name="submit">Submit</string>
     <string name="pick_time">Pick a Time</string>

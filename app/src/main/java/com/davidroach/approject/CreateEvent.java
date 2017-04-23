@@ -6,7 +6,9 @@ import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -57,9 +59,8 @@ public class CreateEvent extends AppCompatActivity {
         final EditText et1 = (EditText) findViewById(R.id.enter_your_name_ET);
         tv1.setText("text1");
 
-        /* 888888------------------------------------------------------------------------*/
+        /* Spinner assignment */
         spinnerTV = (TextView) findViewById(R.id.spinner_TV);
-        //spinner = (Spinner) findViewById(R.id.spinner);
 
         final TextView tv2 = (TextView) findViewById(R.id.enter_game_TV);
         final EditText et2 = (EditText) findViewById(R.id.enter_game_ET);
@@ -131,11 +132,13 @@ public class CreateEvent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                final TextView tv_date = (TextView) findViewById(R.id.tv_date);
                 Calendar c = null;
+
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
                     c = Calendar.getInstance();
                 }
-                final TextView tv_date = (TextView) findViewById(R.id.tv_date);
+
                 int year = 0;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
                     year = c.get(Calendar.YEAR);
@@ -149,12 +152,21 @@ public class CreateEvent extends AppCompatActivity {
                     day = c.get(Calendar.DAY_OF_MONTH);
                 }
 
+
+
+               /* if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd:MM:yyyy");
+                    String dateString = dateFormat.format(c.getTime());
+                    tv_date.setText(dateString);
+                }*/
+
                 DatePickerDialog datePickerDialog = new DatePickerDialog(CreateEvent.this,
                         new DatePickerDialog.OnDateSetListener() {
 
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                tv_date.setText(year + " " + month + ", " + dayOfMonth);
+                                tv_date.setText( month + " " + dayOfMonth + ", " + year);
+
                             }
                         },year, month, day);
                 datePickerDialog.show();
@@ -206,4 +218,8 @@ public class CreateEvent extends AppCompatActivity {
         });
 
     }
+
+    /*void updateDate(int year, int month, int dayOfMonth){
+
+    }*/
 }
