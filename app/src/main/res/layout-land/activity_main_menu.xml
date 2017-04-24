@@ -45,7 +45,7 @@
         android:layout_marginBottom="10dp"
         android:id="@+id/create_event_button"
         android:background="@color/purple"
-        android:layout_weight="1" />
+        android:layout_weight="1"/>
 
     <Button
         android:text="@string/view_event"
@@ -54,7 +54,7 @@
         android:layout_marginBottom="10dp"
         android:id="@+id/view_schedule_button"
         android:background="@color/purple"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
     <Button
         android:text="@string/about"
@@ -72,8 +72,9 @@
         android:layout_marginBottom="10dp"
         android:id="@+id/quit_button"
         android:background="@color/purple"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
-</LinearLayout>
+    </LinearLayout>
+
 
 </LinearLayout>

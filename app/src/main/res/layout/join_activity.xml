@@ -139,6 +139,14 @@
             android:background="@color/darkred"
             android:layout_weight="1" />
 
+  <!--      <android.support.design.widget.BottomNavigationView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="start"
+            app:menu="@menu/bottom_menu" />-->
 
     </LinearLayout>
 

@@ -21,10 +21,11 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="2">
 
         <EditText
-            android:layout_width="198dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -32,7 +33,7 @@
             android:id="@+id/enter_your_name_ET" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/name_string"
             android:id="@+id/enter_your_name_TV"
@@ -44,9 +45,10 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="2">
 
-        <EditText
+       <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -54,20 +56,20 @@
             android:ems="10"
             android:id="@+id/enter_game_ET" />
 
+
         <TextView
             android:text="@string/enter_sport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/enter_game_TV" />
 
-
     </LinearLayout>
-
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="2">
 
         <EditText
             android:layout_width="wrap_content"
@@ -81,9 +83,33 @@
             android:text="@string/enter_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/enter_location_TV" />
+            android:id="@+id/enter_location_TV"
+            android:textAlignment="center" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/spinner"
+            android:layout_weight="1.27" />
+
+        <TextView
+            android:text="@string/enter_sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_TV"
+            android:layout_weight="0.73"
+            android:textAlignment="textStart" />
+
+    </LinearLayout>
+
 
 
     <!--<DatePicker
@@ -97,8 +123,8 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:textColor="@color/white"
-        android:layout_marginTop="5dp"
-        android:text="Set Date"/>
+        android:layout_marginTop="25dp"
+        android:text="@string/set_date"/>
 
     <TextView
         android:id="@+id/tv_date"
@@ -110,6 +136,15 @@
 
 
 
+    <Button
+        android:id="@+id/btn_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:text="@string/set_time"/>
+
     <TextView
         android:id="@+id/tv_time"
         android:layout_width="wrap_content"
@@ -118,19 +153,19 @@
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"/>
 
+    <!--<TimePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker" />-->
+
     <Button
-        android:id="@+id/btn_time"
+        android:id="@+id/btn_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:textColor="@color/white"
         android:layout_marginTop="5dp"
-        android:text="Set Time"/>
-
-    <!--<TimePicker
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/timePicker" />-->
+        android:text="@string/set_location"/>
 
 
     <Button
