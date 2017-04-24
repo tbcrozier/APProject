@@ -23,6 +23,11 @@
         android:paddingBottom="@dimen/activity_horizontal_margin"
         android:textColor="@android:color/black" />
 
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5">
 
     <Button
         android:text="@string/join_event"
@@ -30,7 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:background="@color/purple"
-        android:id="@+id/join_event_button" />
+        android:id="@+id/join_event_button"
+        android:layout_weight="1"/>
 
     <Button
         android:text="@string/create_event"
@@ -38,23 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:id="@+id/create_event_button"
-        android:background="@color/purple" />
-
-    <Button
-        android:text="@string/about"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/about_button"
-        android:background="@color/purple"/>
-
-    <Button
-        android:text="@string/quit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/quit_button"
-        android:background="@color/purple" />
+        android:background="@color/purple"
+        android:layout_weight="1"/>
 
     <Button
         android:text="@string/view_event"
@@ -62,7 +53,28 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:id="@+id/view_schedule_button"
-        android:background="@color/purple" />
+        android:background="@color/purple"
+        android:layout_weight="1" />
+
+    <Button
+        android:text="@string/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/about_button"
+        android:background="@color/purple"
+        android:layout_weight="1"/>
+
+    <Button
+        android:text="@string/quit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/quit_button"
+        android:background="@color/purple"
+        android:layout_weight="1" />
+
+    </LinearLayout>
 
 
 </LinearLayout>
