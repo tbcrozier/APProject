@@ -4,13 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * Created by TBCJr on 4/7/17.
+ * Created by droach-dev on 4/24/17.
  */
 
-public class Schedule extends AppCompatActivity {
+public class EventInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.schedule_activity);
+        setContentView(R.layout.event_info);
     }
+
 }

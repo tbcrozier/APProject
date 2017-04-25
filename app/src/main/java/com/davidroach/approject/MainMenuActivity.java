@@ -24,7 +24,7 @@ public class MainMenuActivity extends AppCompatActivity {
         //testThread.coordsFromAddress(this,"1277 Jostin Drive Clarksville Tn"); //should return lat:36.499703 long:-87.361772
         RestClient clientTest = new RestClient();
         //clientTest.getEventRSVP("Rumble at Rucker");  //works
-        //clientTest.getAllEvents();  //works
+        clientTest.getAllEvents();  //works
         //clientTest.getUserInfo("zoeyr"); //works
         //clientTest.getAvailableSports(); //works
         //clientTest.getUserRSVP("zoeyr");  //works
@@ -38,29 +38,15 @@ public class MainMenuActivity extends AppCompatActivity {
 
         //Listeners for MainMenuActivity Menu Buttons
 
-        findViewById(R.id.join_event_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Join.class);
-                startActivity(intent);
-            }
-        });
 
-        findViewById(R.id.create_event_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), CreateEvent.class);
-                startActivity(intent);
-            }
-        });
 
         findViewById(R.id.view_schedule_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //go to about
-                Intent intent = new Intent(getApplicationContext(), Schedule.class);
+
+               Intent intent = new Intent(getApplicationContext(), EventListActivity.class);
                 startActivity(intent);
             }
         });

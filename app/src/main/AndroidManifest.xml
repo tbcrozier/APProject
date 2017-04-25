@@ -20,8 +20,8 @@
         </activity>
         <activity android:name=".About" />
         <activity android:name=".CreateEvent" />
-        <activity android:name=".Schedule" />
         <activity android:name=".Join" />
+        <activity android:name=".EventListActivity" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

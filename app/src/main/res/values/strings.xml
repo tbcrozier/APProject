@@ -11,7 +11,7 @@
     <!--Activity Main Menu Strings-->
     <string name="main_menu">Main Menu</string>
     <string name="create_event">Create an Event</string>
-    <string name="view_event">View Existing Event</string>
+    <string name="view_event">Events</string>
     <string name="join_event">Join an Event</string>
 
 
