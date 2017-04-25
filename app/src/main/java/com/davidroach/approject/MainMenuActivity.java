@@ -23,8 +23,9 @@ public class MainMenuActivity extends AppCompatActivity {
         //testThread.addressFromCoords(this, 36.533206,-87.353863); //should return 601 college street
         //testThread.coordsFromAddress(this,"1277 Jostin Drive Clarksville Tn"); //should return lat:36.499703 long:-87.361772
         RestClient clientTest = new RestClient();
+        clientTest.getEventInfo("Rumble at Rucker");
         //clientTest.getEventRSVP("Rumble at Rucker");  //works
-        clientTest.getAllEvents();  //works
+        //clientTest.getAllEvents();  //works
         //clientTest.getUserInfo("zoeyr"); //works
         //clientTest.getAvailableSports(); //works
         //clientTest.getUserRSVP("zoeyr");  //works

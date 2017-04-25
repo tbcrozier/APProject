@@ -42,6 +42,35 @@ public class RestClient {
     }
 
 
+protected ArrayList<String> getEventInfo(String eventNameIn){
+    eventNameIn = eventNameIn.replaceAll(" ","%20");
+    String appendUrl = "/event/getinfo/" + eventNameIn ;
+    ArrayList<String> retList = new ArrayList<String>();
+
+    GetConnection gconnect = new GetConnection();
+    try{
+        String jsonString = gconnect.execute(appendUrl).get();
+
+        //parse json array.
+        JSONArray jsonarray = new JSONArray(jsonString);
+        for (int i = 0; i < jsonarray.length(); i++) {
+            JSONObject jsonobject = jsonarray.getJSONObject(i);
+            retList.add(jsonobject.getString("eventname"));
+            retList.add(jsonobject.getString("time"));
+            retList.add(jsonobject.getString("date"));
+            retList.add(jsonobject.getString("locationname"));
+            retList.add(jsonobject.getString("SportName"));
+
+        }
+
+    }
+    catch (Exception e){
+        Log.i("ERROR:", e.toString());
+    }
+    return retList;
+
+}
+
     protected ArrayList<String> getUserInfo(String userNameIn){
         String appendUrl = "/user/getinfo/" + userNameIn ;
         ArrayList<String> retList = new ArrayList<String>();
