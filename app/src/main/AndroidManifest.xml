@@ -22,6 +22,7 @@
         <activity android:name=".CreateEvent" />
         <activity android:name=".Join" />
         <activity android:name=".EventListActivity" />
+        <activity android:name=".EventInfoActivity" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
