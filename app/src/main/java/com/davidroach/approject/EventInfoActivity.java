@@ -31,6 +31,8 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
     private TextView dateTV;
     private TextView locationTV;
     private GoogleMap mMap;
+    private double locationLatitude;
+    private double locationLongitude;
     ArrayList<String> eventData;
 
 
@@ -69,6 +71,9 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
         timeTV.setText("Time:  " + eventData.get(1));
         dateTV.setText("Date:    " + eventData.get(2));
         locationTV.setText("Where:  " + eventData.get(3));
+        locationLatitude = Double.parseDouble(eventData.get(5));
+        locationLongitude = Double.parseDouble(eventData.get(6));
+
 
         //Map Setup
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
@@ -107,9 +112,14 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
 
     @Override
     public void onMapReady(GoogleMap map) {
-        map.addMarker(new MarkerOptions()
-                .position(new LatLng(0, 0))
+                LatLng locationLL = new LatLng(locationLatitude, locationLongitude);
+                map.addMarker(new MarkerOptions()
+                .position(locationLL)
                 .title(eventData.get(0)));
+
+                map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                map.moveCamera(CameraUpdateFactory.newLatLng(locationLL));
+                map.animateCamera(CameraUpdateFactory.zoomTo( 15.0f));
     }
 
 
