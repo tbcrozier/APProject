@@ -22,7 +22,6 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.sign_up_activity);
 
 
-
         //Logic to check the state of save instance state. Currently the Data only exists through
     //   one rotation, if the user rotates back then the data disappears
         if(savedInstanceState == null){

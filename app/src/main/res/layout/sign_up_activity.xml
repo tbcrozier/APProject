@@ -31,7 +31,8 @@ android:background="@color/orange">
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/first_name"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:inputType="textPersonName"/>
 
         <TextView
             android:id="@+id/signup_first_name_TV"
