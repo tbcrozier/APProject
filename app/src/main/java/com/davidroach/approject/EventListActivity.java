@@ -41,8 +41,9 @@ public class EventListActivity extends ListActivity {
         String item = (String) getListAdapter().getItem(position);
         //Toast.makeText(this, item + " selected", Toast.LENGTH_SHORT).show();
 
-        RestClient clientTest = new RestClient();
-
+        Intent intent = new Intent(getApplicationContext(), EventInfoActivity.class);
+        intent.putExtra("EventName", item);
+        startActivity(intent);
 
 
     }
