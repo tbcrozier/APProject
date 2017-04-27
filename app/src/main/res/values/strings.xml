@@ -3,6 +3,9 @@
     <string name="welcome">Welcome, lets play!</string>
     <string name="button">Button</string>
 
+    <!--Login Activity Strings-->
+    <string name="login">Login</string>
+    <string name="signup">Sign-Up</string>
 
     <!--About Activity Strings-->
     <string name="about">About</string>
