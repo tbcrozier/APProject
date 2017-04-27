@@ -42,8 +42,7 @@
             <item>Frisbe</item>
         </string-array>
 
-    <!--Join Strings-->
-    <string name="join">Join</string>
+    <!--SignUp Strings-->
     <string name="username">Username</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>

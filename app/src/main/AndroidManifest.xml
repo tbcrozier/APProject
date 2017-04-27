@@ -21,7 +21,6 @@
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".About" />
         <activity android:name=".CreateEvent" />
-        <activity android:name=".Join" />
         <activity android:name=".EventListActivity" />
         <activity android:name=".SignUp" />
 
