@@ -41,8 +41,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
 
-
-
         findViewById(R.id.view_schedule_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
