@@ -109,9 +109,13 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
     }
 
 
-    protected ArrayList<String> getAllEvents(){
+    protected ArrayList<EventListModel> getAllEvents(){
         String appendUrl = "/events";
-        ArrayList<String> retList = new ArrayList<String>();
+
+        String eventName, sportName, time, date;
+
+       //ArrayList<String> retList = new ArrayList<String>();
+        ArrayList<EventListModel> retList = new ArrayList<EventListModel>();
 
 
         GetConnection gconnect = new GetConnection();
@@ -125,7 +129,9 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
                 JSONObject jsonobject = jsonarray.getJSONObject(i);
 
                 //add sport names to array list to be returned.
-                retList.add(jsonobject.getString("EventName"));
+                //retList.add(jsonobject.getString("EventName"));
+                retList.add(new EventListModel(jsonobject.getString("SportName"),jsonobject.getString("EventName"),jsonobject.getString("Date"),jsonobject.getString("Time")));
+
                 int x = 1+1;
                 x++;
             }
