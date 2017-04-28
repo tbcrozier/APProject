@@ -60,6 +60,8 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
             retList.add(jsonobject.getString("date"));
             retList.add(jsonobject.getString("locationname"));
             retList.add(jsonobject.getString("SportName"));
+            retList.add(jsonobject.getString("Latitude"));
+            retList.add(jsonobject.getString("Longitude"));
 
         }
 
