@@ -9,7 +9,10 @@
 
     <!--About Activity Strings-->
     <string name="about">About</string>
+    <string name="sports_app">Sports App</string>
     <string name="quit">Quit</string>
+    <string name="ds">Quit</string>
+
 
     <!--Activity Main Menu Strings-->
     <string name="main_menu">Main Menu</string>
