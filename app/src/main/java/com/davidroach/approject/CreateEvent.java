@@ -11,6 +11,7 @@ import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,8 +35,11 @@ public class CreateEvent extends AppCompatActivity {
     //Variable that holds save instance state
     private int x = 0;
     String label1, label2,label3;
+    //Variables that control Spinner
     private Spinner spinner;
     private TextView spinnerTV;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,19 +103,19 @@ public class CreateEvent extends AppCompatActivity {
             public void onClick(View v) {
                 //Time Picker Code
                 // Get Current time
-                Calendar c = null;
-                final TextView tv_time = (TextView) findViewById(R.id.tv_time);
+                Calendar c1 = null;
+                final TextView tv_time = (TextView) findViewById(R.id.display_time_TV);
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    c = Calendar.getInstance();
+                    c1 = Calendar.getInstance();
                 }
                 int hour = 0;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    hour = c.get(Calendar.HOUR_OF_DAY);
+                    hour = c1.get(Calendar.HOUR_OF_DAY);
                 }
                 int minute = 0;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    minute = c.get(Calendar.MINUTE);
+                    minute = c1.get(Calendar.MINUTE);
                 }
 
                 TimePickerDialog timePickerDialog = new TimePickerDialog(CreateEvent.this,
@@ -132,31 +136,34 @@ public class CreateEvent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final TextView tv_date = (TextView) findViewById(R.id.tv_date);
-                Calendar c = null;
+
+                final TextView tv_date = (TextView) findViewById(R.id.display_date_TV);
+                Calendar c2 = null;
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    c = Calendar.getInstance();
+                    c2 = Calendar.getInstance();
                 }
-
-                int year = 0;
+                int year = 2017;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    year = c.get(Calendar.YEAR);
+                    year = c2.get(Calendar.YEAR);
+                    Log.i("THE YEAR IS :" , "Year:" + year);
                 }
                 int month = 0;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    month = c.get(Calendar.MONTH);
+                    month = c2.get(Calendar.MONTH);
                 }
                 int day = 0;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    day = c.get(Calendar.DAY_OF_MONTH);
+                    day = c2.get(Calendar.DAY_OF_MONTH);
                 }
-
-
-
-               /* if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+/*//test Logs to help me set the current date
+                Log.i("----------- :" , "DATE ------");
+                Log.i("THE YEAR IS :" , "Year:" + year);
+                Log.i("THE MONTH IS :" , "Month:" + month);
+                Log.i("THE DAY IS :" , "Day:" + day);*/
+                /*if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
                     SimpleDateFormat dateFormat = new SimpleDateFormat("dd:MM:yyyy");
-                    String dateString = dateFormat.format(c.getTime());
+                    String dateString = dateFormat.format(c2.getTime());
                     tv_date.setText(dateString);
                 }*/
 
@@ -165,10 +172,10 @@ public class CreateEvent extends AppCompatActivity {
 
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                tv_date.setText( month + " " + dayOfMonth + ", " + year);
-
+                                tv_date.setText( (month + 1) + " / " + dayOfMonth + " / " + year);
                             }
                         },year, month, day);
+
                 datePickerDialog.show();
             }
         });
@@ -216,10 +223,5 @@ public class CreateEvent extends AppCompatActivity {
 
             }
         });
-
     }
-
-    /*void updateDate(int year, int month, int dayOfMonth){
-
-    }*/
 }

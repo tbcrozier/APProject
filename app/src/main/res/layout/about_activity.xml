@@ -5,9 +5,13 @@
     >
 
     <TextView
-        android:text="@string/welcome"
+        android:id="@+id/title_about_act"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/title_about_act"
-        android:textSize="28sp" />
+        android:background="@color/aqua"
+        android:text="@string/sports_app"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="36sp" />
+
 </LinearLayout>

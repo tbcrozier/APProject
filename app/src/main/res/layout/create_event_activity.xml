@@ -127,12 +127,12 @@
         android:text="@string/set_date"/>
 
     <TextView
-        android:id="@+id/tv_date"
+        android:id="@+id/display_date_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
         android:layout_gravity="center_horizontal"
-        android:textStyle="bold"/>
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 
 
@@ -146,12 +146,12 @@
         android:text="@string/set_time"/>
 
     <TextView
-        android:id="@+id/tv_time"
+        android:id="@+id/display_time_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
         android:layout_gravity="center_horizontal"
-        android:textStyle="bold"/>
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <!--<TimePicker
         android:layout_width="match_parent"
