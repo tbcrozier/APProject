@@ -11,8 +11,12 @@
     <string name="about">About</string>
     <string name="sports_app">Sports App</string>
     <string name="quit">Quit</string>
-    <string name="ds">Quit</string>
-
+    <string name="sports_fun">Sports are Fun!</string>
+    <string name="join_play">Join and Play</string>
+    <string name="meet_friends">Meet Friends</string>
+    <string name="created_by">App Created By:</string>
+    <string name="blake">Blake Crozier</string>
+    <string name="david">David Roach</string>
 
     <!--Activity Main Menu Strings-->
     <string name="main_menu">Main Menu</string>
