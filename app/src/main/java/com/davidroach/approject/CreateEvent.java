@@ -125,15 +125,19 @@ public class CreateEvent extends AppCompatActivity {
                         new TimePickerDialog.OnTimeSetListener() {
 
                             @Override
-                            public void onTimeSet(TimePicker view, int hourOfDay,
-                                                  int minute) {
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
+                                Log.i("----------- :" , "------------");
+                                Log.i("THE HOUR IS :" , "HOUR:" + hourOfDay);
+                                Log.i("----------- :" , "------------");
+                                Log.i("THE MINUTE IS :" , "MIN:" + minute);
                                 tv_time.setText(hourOfDay + ":" + minute);
                             }
                         }, hour, minute, false);
                 timePickerDialog.show();
             }
         });
+
     //Date Button Listener
         findViewById(R.id.btn_date).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,4 +231,11 @@ public class CreateEvent extends AppCompatActivity {
             }
         });
     }
+
+    void updateTime(int hourOfDay, int minuteOfHour){
+
+
+    }
+
+
 }
