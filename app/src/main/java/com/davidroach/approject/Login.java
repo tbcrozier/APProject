@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * Created by TBCJr on 4/26/17.
@@ -15,6 +18,10 @@ public class Login extends AppCompatActivity {
 
     //Variable that holds save instance state
     String label1, label2;
+    private EditText usernameET;
+
+    private EditText passwordET;
+    //private String usernameString,passwordString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +30,8 @@ public class Login extends AppCompatActivity {
 
         //Logic to check the state of save instance state. Currently the Data only exists through
         //   one rotation, if the user rotates back then the data disappears
+        /*
+
         if(savedInstanceState == null){
             label1 = " ";
             label2 = " ";
@@ -30,15 +39,13 @@ public class Login extends AppCompatActivity {
             label1 = savedInstanceState.getString("text1");
             label2 = savedInstanceState.getString("text2");
         }
+        */
 
-        final TextView tv1 = (TextView) findViewById(R.id.login_uname_TV);
-        final EditText et1 = (EditText) findViewById(R.id.login_uname_ET);
-        tv1.setText("text1");
+        usernameET = (EditText) findViewById(R.id.login_uname_ET);
 
-        final TextView tv2 = (TextView) findViewById(R.id.login_pword_TV);
-        final EditText et2 = (EditText) findViewById(R.id.login_pword_ET);
-        tv2.setText("text2");
-
+        passwordET = (EditText) findViewById(R.id.login_pword_ET);
+        //usernameString = "NothingEntered";
+        //passwordString = "NothingEntered";
 
 
 
@@ -46,14 +53,43 @@ public class Login extends AppCompatActivity {
         findViewById(R.id.login_enter_button).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                //check if username and password exists.
+                    if(usernameET.getText().toString().isEmpty() || passwordET.getText().toString().isEmpty()){
+                        Toast.makeText(Login.this,"You must enter a username and a password.", Toast.LENGTH_LONG).show();
 
-                tv1.setText(et1.getText());
-                tv2.setText(et2.getText());
+                    }
+                    else {
+                        ArrayList<String> loginReturn;
+
+                        RestClient loginObj = new RestClient();
+                        loginReturn = loginObj.login(usernameET.getText().toString(), passwordET.getText().toString());
+
+                        //check if username and password is correct
+                        if(loginReturn.size()==0){
+                            Toast.makeText(Login.this,"Invalid Username or Password", Toast.LENGTH_LONG).show();
+
+                        }
+                        else{
+                            Toast.makeText(Login.this,"Login Successful", Toast.LENGTH_LONG).show();
+
+                            Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
+                            startActivity(intent);
+                        }
+
+
+
+                    }
+
+
+
+                //If so go to main menu.
+                //If not show Toast Message with invalid username and password.
+
 
             }
         });
 
-
+        /*
         //Return to Main Menu button listener
         findViewById(R.id.main_menu_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +99,7 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        */
 
         //Sign-up button listener
         findViewById(R.id.sign_up_button).setOnClickListener(new View.OnClickListener() {
@@ -80,11 +117,13 @@ public class Login extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
+        /*
         EditText et1 = (EditText) findViewById(R.id.login_uname_ET);
         outState.putString("text1", et1.getText().toString());
 
         EditText et2 = (EditText) findViewById(R.id.login_pword_ET);
         outState.putString("text2", et2.getText().toString());
+        */
 
     }
 }
