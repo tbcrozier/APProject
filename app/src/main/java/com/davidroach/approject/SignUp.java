@@ -21,7 +21,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up_activity);
 
-
+/*
         //Logic to check the state of save instance state. Currently the Data only exists through
     //   one rotation, if the user rotates back then the data disappears
         if(savedInstanceState == null){
@@ -37,36 +37,22 @@ public class SignUp extends AppCompatActivity {
         label4 = savedInstanceState.getString("text4");
         label5 = savedInstanceState.getString("text5");
     }
+    */
 
-    final TextView tv1 = (TextView) findViewById(R.id.signup_first_name_TV);
     final EditText et1 = (EditText) findViewById(R.id.signup_first_name_ET);
-        tv1.setText("text1");
 
-    final TextView tv2 = (TextView) findViewById(R.id.signup_last_name_TV);
     final EditText et2 = (EditText) findViewById(R.id.signup_last_name_ET);
-        tv2.setText("text2");
 
-    final TextView tv3 = (TextView) findViewById(R.id.signup_username_TV);
     final EditText et3 = (EditText) findViewById(R.id.signup_username_ET);
-        tv3.setText("text3");
 
-    final TextView tv4 = (TextView) findViewById(R.id.signup_password_TV);
     final EditText et4 = (EditText) findViewById(R.id.signup_password_ET);
-        tv4.setText("text4");
 
-    final TextView tv5 = (TextView) findViewById(R.id.signup_email_TV);
     final EditText et5 = (EditText) findViewById(R.id.signup_email_ET);
-        tv4.setText("text5");
 
     findViewById(R.id.sign_up_submit_button).setOnClickListener(new View.OnClickListener(){
         @Override
         public void onClick(View v) {
 
-            tv1.setText(et1.getText());
-            tv2.setText(et2.getText());
-            tv3.setText(et3.getText());
-            tv4.setText(et4.getText());
-            tv5.setText(et5.getText());
 
         }
     });

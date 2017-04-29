@@ -118,8 +118,8 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
                 .title(eventData.get(0)));
 
                 map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                map.moveCamera(CameraUpdateFactory.newLatLng(locationLL));
-                map.animateCamera(CameraUpdateFactory.zoomTo( 15.0f));
+                //map.moveCamera(CameraUpdateFactory.newLatLng(locationLL));
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(locationLL,15f));
     }
 
 
