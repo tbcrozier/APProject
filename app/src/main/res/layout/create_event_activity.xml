@@ -79,6 +79,7 @@
             android:ems="10"
             android:id="@+id/enter_location_ET" />
 
+
         <TextView
             android:text="@string/enter_location"
             android:layout_width="wrap_content"
