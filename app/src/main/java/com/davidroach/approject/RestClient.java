@@ -33,7 +33,7 @@ public class RestClient {
 
     JsonReader returnedJson = null;
     String result = null;
-    String baseURL = "http://107.170.31.121";
+    //String baseURL = "http://107.170.31.121";
 
     //constructor
     public RestClient(){
@@ -97,6 +97,33 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
     return retList;
 
 }
+
+
+
+
+    protected ArrayList<String> getSportNames(){
+        String appendUrl = "/sports";
+        ArrayList<String> retList = new ArrayList<String>();
+
+        GetConnection gconnect = new GetConnection();
+        try{
+            String jsonString = gconnect.execute(appendUrl).get();
+
+            //parse json array.
+            JSONArray jsonarray = new JSONArray(jsonString);
+            for (int i = 0; i < jsonarray.length(); i++) {
+                JSONObject jsonobject = jsonarray.getJSONObject(i);
+                retList.add(jsonobject.getString("SportName"));
+            }
+
+        }
+        catch (Exception e){
+            Log.i("ERROR:", e.toString());
+        }
+        return retList;
+
+    }
+
 
     protected ArrayList<String> getUserInfo(String userNameIn){
         String appendUrl = "/user/getinfo/" + userNameIn ;
@@ -215,7 +242,7 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
 
         try {
             PostConnection postConnection = new PostConnection();
-            String appendUrl = "/rsvp/new/";
+            String appendUrl = "/rsvp/new";
             String urlParams = "username="+userNameIn+"&eventname="+eventNameIn;
             outMessage = postConnection.execute(appendUrl,urlParams,"RSVP").get();
         }
@@ -280,6 +307,40 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
 
                 //add sport names to array list to be returned.
                 retList.add(jsonobject.getString("SportName"));
+                int x = 1+1;
+                x++;
+            }
+
+            //Log.i("JSONOUT2:",jsonString);
+        }
+        catch (Exception e){
+            //Log.i("ERROR:", e.toString());
+        }
+
+
+        return retList;
+    }
+
+
+
+
+    protected ArrayList<String> getAvailableLocations(){
+        String appendUrl = "/locations";
+        ArrayList<String> retList = new ArrayList<String>();
+
+
+        GetConnection gconnect = new GetConnection();
+        try {
+            //get returned json string
+            String jsonString = gconnect.execute(appendUrl).get();
+
+            //parse json array.
+            JSONArray jsonarray = new JSONArray(jsonString);
+            for (int i = 0; i < jsonarray.length(); i++) {
+                JSONObject jsonobject = jsonarray.getJSONObject(i);
+
+                //add sport names to array list to be returned.
+                retList.add(jsonobject.getString("LocationName"));
                 int x = 1+1;
                 x++;
             }
@@ -374,6 +435,7 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
 
 
             String baseURL = "http://107.170.31.121";
+            //String baseURL = "http://192.168.0.3:8080";
             String mergeURL = baseURL + urls[0]; //made for debugging
             Log.i("DEBUG", mergeURL);
             StringBuilder jsonOut = null;
@@ -425,13 +487,13 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
 
 
 
-    protected String createNewUser(final String userNameIn, final String passwordIn, final String firstNameIn, final String lastNameIn, final String emailIn){
+    protected String createNewUser( String userNameIn,  String passwordIn,  String firstNameIn,  String lastNameIn,  String emailIn){
         String outMessage = null;
 
         try {
             PostConnection postConnection = new PostConnection();
-            String appendUrl = "/user/new/";
-            String urlParams = "username="+userNameIn+"&password="+passwordIn+"&firstname="+firstNameIn+"&lastname="+lastNameIn+"&email="+emailIn;
+            String appendUrl = "/user/new";
+            String urlParams = "UserName="+userNameIn+"&Password="+passwordIn+"&FirstName="+firstNameIn+"&LastName="+lastNameIn+"&Email="+emailIn;
             outMessage = postConnection.execute(appendUrl,urlParams,"User").get();
         }
         catch (Exception e){
@@ -459,6 +521,7 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
 
 
             String baseURL = "http://107.170.31.121";
+            //String baseURL ="http://192.168.0.3:8080";
             String mergeURL = baseURL + urls[0]; //made for debugging
 
             Log.i("DEBUG", mergeURL);

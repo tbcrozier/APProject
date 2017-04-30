@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="match_parent"
+
     android:background="#F3F3F3"
     android:orientation="horizontal"
     >
@@ -12,9 +13,9 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:layout_marginTop="8dip"
         android:src="@drawable/football32"
         />
 
@@ -25,37 +26,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/item_icon"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
         android:textSize="20sp" />
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="20dp">
+    android:layout_marginLeft="20dip">
     <TextView
         android:id="@+id/event_date_tv"
         android:text="12/12/2018"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/item_icon"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:textSize="15dp" />
+
+        android:layout_marginLeft="30dip"
+        android:layout_marginRight="10dip"
+
+        android:textSize="15dip" />
 
     <TextView
         android:id="@+id/event_time_tv"
         android:text="7:00 AM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/item_icon"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:textSize="15dp" />
+
+        android:layout_marginLeft="30dip"
+        android:layout_marginRight="10dip"
+
+        android:textSize="15dip" />
 
     </LinearLayout>
 

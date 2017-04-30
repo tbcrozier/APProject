@@ -52,7 +52,7 @@ public class EventListActivity extends ListActivity {
                 EventListModel itemObj = eventsReturned.get(position);
 
 
-                Toast.makeText(EventListActivity.this,"selected", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EventListActivity.this,"selected", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(getApplicationContext(), EventInfoActivity.class);
                 intent.putExtra("EventName", itemObj.getEventName());

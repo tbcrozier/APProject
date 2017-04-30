@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(Login.this,"Login Successful", Toast.LENGTH_LONG).show();
-
+                            ((MyApplication) getApplication()).setCurrentUser(usernameET.getText().toString());
                             Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
                             startActivity(intent);
                         }

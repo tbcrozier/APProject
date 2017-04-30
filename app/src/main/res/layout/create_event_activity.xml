@@ -24,19 +24,13 @@
         android:layout_height="wrap_content"
         android:weightSum="2">
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:hint="@string/name_string"
-            android:id="@+id/enter_your_name_ET" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/name_string"
-            android:id="@+id/enter_your_name_TV"
+            android:layout_marginBottom="5dip"
+            android:text="Current User"
+            android:textSize="20sp"
+            android:id="@+id/username_TV"
             android:layout_weight="1" />
 
 
@@ -48,44 +42,13 @@
         android:layout_height="wrap_content"
         android:weightSum="2">
 
-       <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/enter_sport"
-            android:ems="10"
-            android:id="@+id/enter_game_ET" />
-
-
-        <TextView
-            android:text="@string/enter_sport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/enter_game_TV" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2">
-
         <EditText
-            android:layout_width="wrap_content"
+            android:id="@+id/event_name_et"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/enter_location"
-            android:ems="10"
-            android:id="@+id/enter_location_ET" />
+            android:layout_marginBottom="25dip"
+            android:hint="Event Name"/>
 
-
-        <TextView
-            android:text="@string/enter_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/enter_location_TV"
-            android:textAlignment="center" />
 
     </LinearLayout>
 
@@ -96,18 +59,30 @@
         android:weightSum="2">
 
         <Spinner
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/spinner"
-            android:layout_weight="1.27" />
 
-        <TextView
-            android:text="@string/enter_sport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner_TV"
-            android:layout_weight="0.73"
-            android:textAlignment="textStart" />
+            android:layout_marginBottom="25dip"
+            android:id="@+id/location_spinner"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            android:layout_marginBottom="15dip"
+            android:id="@+id/sport_spinner"
+             />
 
     </LinearLayout>
 
@@ -159,31 +134,28 @@
         android:layout_height="wrap_content"
         android:id="@+id/timePicker" />-->
 
-    <Button
-        android:id="@+id/btn_location"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/white"
-        android:layout_marginTop="5dp"
-        android:text="@string/set_location"/>
+        android:orientation="horizontal">
 
 
     <Button
         android:text="@string/submit"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:id="@+id/enter_event_info_button" />
+
+        android:id="@+id/submit_button" />
 
     <Button
-        android:text="@string/main_menu"
-        android:layout_width="match_parent"
+        android:text="@string/Cancel"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:background="@color/red"
-        android:layout_marginTop="50dp"
-        android:id="@+id/main_menu_button" />
+        android:id="@+id/cancel_button" />
+
+    </LinearLayout>
 
 </LinearLayout>
 

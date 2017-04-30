@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
@@ -17,6 +19,8 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        //Toast.makeText(MainMenuActivity.this,((MyApplication) this.getApplication()).getCurrentUser(), Toast.LENGTH_LONG).show();
 
 
         //GeoThread testThread = new GeoThread(this);
@@ -31,8 +35,10 @@ public class MainMenuActivity extends AppCompatActivity {
         //clientTest.getUserRSVP("zoeyr");  //works
         //clientTest.getFutureEventsBySport("Basketball");//works
         //clientTest.getFutureEventsByLocation("Rucker Park"); //works
-         //clientTest.createNewUser("JonJon","FMPasw0rd","Jon","Jonsophan","jonso@mail.com"); //works
-        //clientTest.createNewRSVP("zoeyr","Event 4"); //works
+        //clientTest.createNewUser("Fuuuck","FMPasw0rd","Jon","Jonsophan","jonso@mail.com"); //works
+        //clientTest.createNewRSVP("Uname","Event 4"); //works
+
+
         //clientTest.createNewEvent();
 
 
