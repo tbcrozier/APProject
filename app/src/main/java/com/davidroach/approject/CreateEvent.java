@@ -45,6 +45,9 @@ public class CreateEvent extends AppCompatActivity {
     private String datestring;
     private String timestring;
     private String eventName;
+    private String sportString;
+    private String locationString;
+
     //variables to control date picker
     EditText date, time;
     DatePickerDialog datePickerDialog;
@@ -101,11 +104,12 @@ public class CreateEvent extends AppCompatActivity {
 
 
             //check for missing info
-               if(currentUser == null || eventName.isEmpty()||datestring == null||timestring == null){
+               if(currentUser == null || eventName.isEmpty()||datestring == null||timestring == null||sportString == null||locationString == null){
                    Toast.makeText(getApplicationContext(),"You must fill all fields.",Toast.LENGTH_LONG).show();
                }else{
                    Toast.makeText(getApplicationContext(),"Saving Event",Toast.LENGTH_LONG).show();
-
+                    RestClient eventRestObj = new RestClient();
+                    String returnString =  eventRestObj.createNewEvent(sportString,locationString,datestring,timestring,eventName,currentUser);
                }
 
            }
@@ -139,8 +143,8 @@ public class CreateEvent extends AppCompatActivity {
 
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-
-                                time.setText(hourOfDay + " : " + minute);
+                                timestring = hourOfDay + ":" + minute;
+                                time.setText(timestring);
                             }
                         }, hour, minute, false);
                 timePickerDialog.show();
@@ -251,8 +255,9 @@ public class CreateEvent extends AppCompatActivity {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                                 // set day of month , month and year value in the edit text
-                                date.setText(dayOfMonth + "/"
-                                        + (monthOfYear + 1) + "/" + year);
+
+                                datestring = year + "-" + (monthOfYear+1) + "-" + dayOfMonth;
+                                date.setText(datestring);
                             }
                         }, mYear, mMonth, mDay);
                 datePickerDialog.show();
@@ -294,7 +299,8 @@ public class CreateEvent extends AppCompatActivity {
         sportSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String str = sportSpinner.getSelectedItem().toString();
+                sportString = sportSpinner.getSelectedItem().toString();
+
             }
 
             @Override
@@ -321,7 +327,7 @@ public class CreateEvent extends AppCompatActivity {
         locationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String str = locationSpinner.getSelectedItem().toString();
+                locationString = locationSpinner.getSelectedItem().toString();
             }
 
             @Override
