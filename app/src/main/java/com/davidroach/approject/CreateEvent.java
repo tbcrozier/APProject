@@ -7,7 +7,8 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
-import android.icu.util.Calendar;
+import java.util.Calendar;
+//import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -44,6 +45,11 @@ public class CreateEvent extends AppCompatActivity {
     private String datestring;
     private String timestring;
     private String eventName;
+    //variables to control date picker
+    EditText date, time;
+    DatePickerDialog datePickerDialog;
+    TimePickerDialog timePickerDialog;
+
 
 
     @Override
@@ -115,8 +121,34 @@ public class CreateEvent extends AppCompatActivity {
             }
         });
 
+        //Time EditText & Listener
+        time = (EditText)findViewById(R.id.time);
+
+        time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final Calendar c2 = Calendar.getInstance();
+
+                int hour = c2.get(Calendar.HOUR_OF_DAY);
+                int minute = c2.get(Calendar.MINUTE);
+
+                //time picker dialog
+                timePickerDialog = new TimePickerDialog(CreateEvent.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                                time.setText(hourOfDay + " : " + minute);
+                            }
+                        }, hour, minute, false);
+                timePickerDialog.show();
+            }
+        });
+
     //Time Button listener
-        findViewById(R.id.btn_time).setOnClickListener(new View.OnClickListener() {
+   /*     findViewById(R.id.btn_time).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Time Picker Code
@@ -154,10 +186,10 @@ public class CreateEvent extends AppCompatActivity {
                         }, hour, minute, false);
                 timePickerDialog.show();
             }
-        });
+        });*/
 
     //Date Button Listener
-        findViewById(R.id.btn_date).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.btn_date).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -197,7 +229,37 @@ public class CreateEvent extends AppCompatActivity {
 
                 datePickerDialog.show();
             }
+        });*/
+
+        //Date EditText & Listener
+        // initiate the date picker and a button
+        date = (EditText) findViewById(R.id.date);
+
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+
+                int mYear = c.get(Calendar.YEAR);
+                int mMonth = c.get(Calendar.MONTH);
+                int mDay = c.get(Calendar.DAY_OF_MONTH);
+
+                //date picker dialog
+                datePickerDialog = new DatePickerDialog(CreateEvent.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                // set day of month , month and year value in the edit text
+                                date.setText(dayOfMonth + "/"
+                                        + (monthOfYear + 1) + "/" + year);
+                            }
+                        }, mYear, mMonth, mDay);
+                datePickerDialog.show();
+
+            }
         });
+
 
     }
 
