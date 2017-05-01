@@ -11,22 +11,20 @@
         android:id="@+id/item_icon"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_alignParentLeft="true"
         android:layout_marginLeft="8dip"
         android:layout_marginRight="8dip"
         android:layout_marginTop="8dip"
-        android:src="@drawable/football32"
+        android:src="@drawable/sport_bball"
         />
 
     <!-- title -->
     <TextView
         android:id="@+id/event_title"
-        android:text="Test Event"
+        android:text="@string/test_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/item_icon"
-        android:layout_marginLeft="30dip"
-        android:layout_marginRight="10dip"
+        android:layout_marginStart="30dip"
+        android:layout_marginEnd="10dip"
         android:layout_marginTop="10dip"
         android:textSize="20sp" />
 
@@ -34,28 +32,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="20dip">
+    android:layout_marginStart="20dip">
     <TextView
         android:id="@+id/event_date_tv"
-        android:text="12/12/2018"
+        android:text="@string/test_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginLeft="30dip"
-        android:layout_marginRight="10dip"
+        android:layout_marginStart="30dip"
+        android:layout_marginEnd="10dip"
 
-        android:textSize="15dip" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/event_time_tv"
-        android:text="7:00 AM"
+        android:text="@string/test_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginLeft="30dip"
-        android:layout_marginRight="10dip"
+        android:layout_marginStart="30dip"
+        android:layout_marginEnd="10dip"
 
-        android:textSize="15dip" />
+        android:textSize="15sp" />
 
     </LinearLayout>
 
