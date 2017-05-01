@@ -34,6 +34,7 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
     private double locationLatitude;
     private double locationLongitude;
     ArrayList<String> eventData;
+    private String currentUser;
 
 
 
@@ -58,6 +59,9 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
         //Query Rest Client
 
         eventData = restObj.getEventInfo(eventNameFromIntent);
+
+        //get logged in user
+        currentUser = ((MyApplication) this.getApplication()).getCurrentUser();
 
 
         //Set TextViews
