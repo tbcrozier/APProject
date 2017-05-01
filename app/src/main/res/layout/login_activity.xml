@@ -14,7 +14,7 @@
         android:text="Sport Event Tracker"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="30sp" />
+        android:textSize="36sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,22 +58,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_marginTop="10dp">
+    android:layout_marginTop="10dp"
+    android:weightSum="2">
 
     <Button
         android:id="@+id/login_enter_button"
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/darkorange"
         android:text="@string/login" />
 
 
     <Button
-            android:id="@+id/sign_up_button"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/signup" />
+        android:id="@+id/sign_up_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/darkorange"
+        android:text="@string/signup" />
 </LinearLayout>
 
     </LinearLayout>

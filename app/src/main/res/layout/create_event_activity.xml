@@ -6,8 +6,7 @@
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
 
     <TextView
@@ -145,6 +144,14 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:id="@+id/cancel_button"
+        style="?android:attr/buttonBarButtonStyle"/>
+
+    <Button
+        android:text="@string/main_menu"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_menu_button"
         style="?android:attr/buttonBarButtonStyle"/>
 
     </LinearLayout>
