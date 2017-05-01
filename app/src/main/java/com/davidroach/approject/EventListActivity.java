@@ -16,10 +16,13 @@ public class EventListActivity extends ListActivity {
 
     private ListView listView;
     private ArrayList<EventListModel> eventsReturned;
+    private String currentUser;
 
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.list_activity_view);
+
+
 
         RestClient eventObj = new RestClient();
        eventsReturned = eventObj.getAllEvents();

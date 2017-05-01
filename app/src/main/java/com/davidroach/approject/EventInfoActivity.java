@@ -25,15 +25,19 @@ import java.util.ArrayList;
 public class EventInfoActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private String eventNameFromIntent;
-    private RestClient restObj;
+    private RestClient restObj, restObj2;
     private TextView nameTV;
     private TextView timeTV;
     private TextView dateTV;
     private TextView locationTV;
+    private TextView rsvpTV;
     private GoogleMap mMap;
     private double locationLatitude;
     private double locationLongitude;
     ArrayList<String> eventData;
+    private String currentUser;
+    private int numberOfRSVP;
+
 
 
 
@@ -44,6 +48,7 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
         setContentView(R.layout.event_info);
 
         restObj = new RestClient();
+        restObj2 = new RestClient();
              /*
             0: Event Name
             1: Time
@@ -58,6 +63,10 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
         //Query Rest Client
 
         eventData = restObj.getEventInfo(eventNameFromIntent);
+        numberOfRSVP = restObj2.getEventRSVP(eventNameFromIntent).size();
+
+        //get logged in user
+        currentUser = ((MyApplication) this.getApplication()).getCurrentUser();
 
 
         //Set TextViews
@@ -66,11 +75,13 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
         timeTV = (TextView)findViewById(R.id.event_time_tv);
         dateTV = (TextView)findViewById(R.id.event_date_tv);
         locationTV = (TextView)findViewById(R.id.event_location_tv);
+        rsvpTV = (TextView)findViewById(R.id.num_rsvp_tv);
 
         nameTV.setText(eventData.get(0));
         timeTV.setText("Time:  " + eventData.get(1));
         dateTV.setText("Date:    " + eventData.get(2));
         locationTV.setText("Where:  " + eventData.get(3));
+        rsvpTV.setText(Integer.toString(numberOfRSVP) + " People Attending");
         locationLatitude = Double.parseDouble(eventData.get(5));
         locationLongitude = Double.parseDouble(eventData.get(6));
 
@@ -98,9 +109,9 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
         findViewById(R.id.event_join_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //rsvp
+                  //send rsvp to db
                   restObj = new RestClient();
-
+                  restObj.createNewRSVP(currentUser,eventNameFromIntent);
 
 
                 Toast.makeText(getApplicationContext(), "RSVP Created", Toast.LENGTH_LONG).show();
