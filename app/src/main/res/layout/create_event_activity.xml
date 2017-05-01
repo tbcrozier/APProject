@@ -121,6 +121,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/click_for_date"
             android:padding="15dp"
+            android:focusable="false"
+
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -162,6 +164,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/click_for_time"
             android:padding="15dp"
+            android:focusable="false"
+
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />

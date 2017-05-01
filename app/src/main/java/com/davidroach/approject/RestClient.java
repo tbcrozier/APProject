@@ -199,7 +199,23 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
 
     }
 
-    protected void createNewEvent(String sportNameIn, String locationIn, String dateIn, String timeIn, String eventNameIn, String userNameIn){
+    protected String createNewEvent(String sportNameIn, String locationIn, String dateIn, String timeIn, String eventNameIn, String userNameIn){
+        String returnString = "";
+        eventNameIn = eventNameIn.replaceAll(" ","%20");
+        locationIn = locationIn.replaceAll(" ","%20");
+
+        try {
+            PostConnection postConnection = new PostConnection();
+            String appendUrl = "/event/create";
+            String urlParams = "sportname="+sportNameIn+"&location="+locationIn+"&date="+dateIn+"&time="+timeIn+"&eventname="+eventNameIn+"&username="+userNameIn;
+            returnString = postConnection.execute(appendUrl,urlParams,"Event").get();
+        }
+        catch (Exception e){
+            Log.i("POST ERROR: ", e.toString());
+        }
+
+
+        return returnString;
 
     }
 

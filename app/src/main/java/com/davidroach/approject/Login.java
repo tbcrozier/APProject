@@ -62,7 +62,7 @@ public class Login extends AppCompatActivity {
                         ArrayList<String> loginReturn;
 
                         RestClient loginObj = new RestClient();
-                        loginReturn = loginObj.login(usernameET.getText().toString(), passwordET.getText().toString());
+                        loginReturn = loginObj.login(usernameET.getText().toString().trim(), passwordET.getText().toString().trim());
 
                         //check if username and password is correct
                         if(loginReturn.size()==0){
