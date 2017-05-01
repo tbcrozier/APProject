@@ -16,8 +16,5 @@ public class About extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             this.requestWindowFeature(Window.FEATURE_NO_TITLE);
             setContentView(R.layout.about_activity);
-
-
-
         }
 }
