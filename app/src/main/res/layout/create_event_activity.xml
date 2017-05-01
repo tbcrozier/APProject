@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_height="match_parent"
+    android:background="@color/paleton_tiel">
 
     <TextView
         android:text="@string/create_event"
@@ -78,7 +74,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-
             android:layout_marginBottom="15dip"
             android:id="@+id/sport_spinner"
              />
@@ -97,7 +92,8 @@
             android:hint="@string/click_for_date"
             android:padding="15dp"
             android:focusable="false"
-
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/paleton_purp_light"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -116,8 +112,9 @@
             android:hint="@string/click_for_time"
             android:padding="15dp"
             android:focusable="false"
-
-            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/paleton_purp_light"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -130,32 +127,34 @@
         android:orientation="horizontal">
 
 
-    <Button
-        android:text="@string/submit"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:id="@+id/submit_button"
-        style="?android:attr/buttonBarButtonStyle"/>
+        <Button
+            android:id="@+id/submit_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/submit"
+            android:textColor="@color/black" />
 
-    <Button
-        android:text="@string/Cancel"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:id="@+id/cancel_button"
-        style="?android:attr/buttonBarButtonStyle"/>
+        <Button
+            android:id="@+id/cancel_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Cancel"
+            android:textColor="@color/black" />
 
-    <Button
-        android:text="@string/main_menu"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_menu_button"
-        style="?android:attr/buttonBarButtonStyle"/>
+        <Button
+            android:id="@+id/main_menu_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/main_menu"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
 </LinearLayout>
 
-</ScrollView>

@@ -26,4 +26,11 @@
     <color name="aqua" type="color">#FF33B5E5</color>
     <color name="purple" type="color">#FFAA66CC</color>
     <color name="black" type="color">#000000</color>
+    <color name="light_green" type="color">#42f46e</color>
+    <color name="burnt_orange" type="color">#f96c07</color>
+    <color name="paleton_tiel" type="color">#209FD0</color>
+    <color name="paleton_purp" type="color">#662CD7</color>
+    <color name="paleton_purp_light" type="color">#9D77E7</color>
+
+
 </resources>
