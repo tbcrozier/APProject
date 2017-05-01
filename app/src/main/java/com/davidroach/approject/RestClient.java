@@ -289,7 +289,7 @@ protected ArrayList<String> getEventInfo(String eventNameIn){
                 JSONObject jsonobject = jsonarray.getJSONObject(i);
 
                 //add sport names to array list to be returned.
-                retList.add(jsonobject.getString("username"));
+                retList.add(jsonobject.getString("UserName"));
                 int x = 1+1;
                 x++;
             }
