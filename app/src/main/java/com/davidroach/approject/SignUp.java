@@ -79,8 +79,8 @@ public class SignUp extends AppCompatActivity {
                String returnString = restObj.createNewUser(userName,password,firstName,lastName,email);
                 Toast.makeText(getApplicationContext(),returnString,Toast.LENGTH_LONG).show();
 
-                //Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
 
 
             }
