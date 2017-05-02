@@ -110,6 +110,9 @@ public class CreateEvent extends AppCompatActivity {
                    Toast.makeText(getApplicationContext(),"Saving Event",Toast.LENGTH_LONG).show();
                     RestClient eventRestObj = new RestClient();
                     String returnString =  eventRestObj.createNewEvent(sportString,locationString,datestring,timestring,eventName,currentUser);
+
+                   Intent intent = new Intent(getApplicationContext(), EventListActivity.class);
+                   startActivity(intent);
                }
 
            }
