@@ -27,6 +27,7 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
     private String eventNameFromIntent;
     private RestClient restObj, restObj2;
     private TextView nameTV;
+    private TextView sportTV;
     private TextView timeTV;
     private TextView dateTV;
     private TextView locationTV;
@@ -76,11 +77,13 @@ public class EventInfoActivity extends FragmentActivity implements OnMapReadyCal
         dateTV = (TextView)findViewById(R.id.event_date_tv);
         locationTV = (TextView)findViewById(R.id.event_location_tv);
         rsvpTV = (TextView)findViewById(R.id.num_rsvp_tv);
+        sportTV = (TextView)findViewById(R.id.event_sport_tv);
 
         nameTV.setText(eventData.get(0));
         timeTV.setText("Time:  " + eventData.get(1));
         dateTV.setText("Date:    " + eventData.get(2));
         locationTV.setText("Where:  " + eventData.get(3));
+        sportTV.setText("Sport:  " + eventData.get(4));
         rsvpTV.setText(Integer.toString(numberOfRSVP) + " People Attending");
         locationLatitude = Double.parseDouble(eventData.get(5));
         locationLongitude = Double.parseDouble(eventData.get(6));
