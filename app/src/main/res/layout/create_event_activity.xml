@@ -1,36 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@color/paleton_tiel">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#FFDE00"
+        android:weightSum="1">
+
+    </LinearLayout>
 
     <TextView
-        android:text="@string/create_event"
+        android:id="@+id/create_event_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/create_event_view"
-        android:textSize="36sp"
-        android:textAlignment="center" />
+        android:background="#FFA748"
+        android:text="@string/create_event"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="36sp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#FFDE00"
+        android:weightSum="1">
+
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2">
+        android:weightSum="1">
 
         <TextView
+            android:id="@+id/username_TV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dip"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:background="@color/paleton_purp_light"
             android:text="@string/current_user"
-            android:textSize="20sp"
-            android:id="@+id/username_TV"
-            android:layout_weight="1" />
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
@@ -39,31 +61,40 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2">
+        android:weightSum="1">
 
         <EditText
             android:id="@+id/event_name_et"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dip"
-            android:hint="@string/event_name"/>
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:background="@color/paleton_purp_light"
+            android:hint="@string/event_name"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/paleton_purp_light"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:orientation="horizontal"
         android:weightSum="2">
 
         <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:layout_marginBottom="25dip"
             android:id="@+id/location_spinner"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="25dip" />
 
 
     </LinearLayout>
@@ -71,14 +102,16 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:background="@color/paleton_purp_light"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
         android:layout_height="wrap_content"
         android:weightSum="2">
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-
             android:layout_marginBottom="15dip"
             android:id="@+id/sport_spinner"
              />
@@ -94,10 +127,14 @@
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/paleton_purp_light"
+            android:focusable="false"
             android:hint="@string/click_for_date"
             android:padding="15dp"
-            android:focusable="false"
-
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -113,16 +150,29 @@
             android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/paleton_purp_light"
+            android:focusable="false"
             android:hint="@string/click_for_time"
             android:padding="15dp"
-            android:focusable="false"
-
-            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_height="10dp"
+        android:background="#FFDE00"
+        android:weightSum="1">
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -130,32 +180,46 @@
         android:orientation="horizontal">
 
 
-    <Button
-        android:text="@string/submit"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:id="@+id/submit_button"
-        style="?android:attr/buttonBarButtonStyle"/>
+        <Button
+            android:id="@+id/submit_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFA748"
+            android:text="@string/submit"
+            android:textColor="@color/black" />
 
-    <Button
-        android:text="@string/Cancel"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:id="@+id/cancel_button"
-        style="?android:attr/buttonBarButtonStyle"/>
+        <Button
+            android:id="@+id/cancel_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFA748"
+            android:text="@string/Cancel"
+            android:textColor="@color/black" />
 
-    <Button
-        android:text="@string/main_menu"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_menu_button"
-        style="?android:attr/buttonBarButtonStyle"/>
+        <Button
+            android:id="@+id/main_menu_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFA748"
+            android:text="@string/main_menu"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#FFDE00"
+        android:weightSum="1">
 
     </LinearLayout>
 
 </LinearLayout>
 
-</ScrollView>
