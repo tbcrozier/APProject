@@ -47,6 +47,15 @@ public class EventListActivity extends ListActivity {
         });
 
 
+        findViewById(R.id.list_back_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         AdapterView.OnItemClickListener adapterViewListener = new AdapterView.OnItemClickListener() {
 
             //on click
