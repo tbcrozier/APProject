@@ -6,7 +6,20 @@
     android:orientation="vertical"
     android:gravity="center"
     >
-
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/paleton_blueish"
+        android:weightSum="1">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/paleton_purp_light"
+        android:weightSum="1">
+    </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -19,6 +32,8 @@
         android:id="@+id/title_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
         android:text="@string/sport_tracker"
         android:textAlignment="center"
         android:textColor="@android:color/black"
@@ -31,7 +46,20 @@
         android:background="@color/paleton_yellow_light"
         android:weightSum="1">
     </LinearLayout>
-
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/paleton_purp_light"
+        android:weightSum="1">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/paleton_blueish"
+        android:weightSum="1">
+    </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -46,43 +74,87 @@
         android:orientation="vertical"
         android:gravity="center">
 
-    <TextView
-        android:id="@+id/login_TV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        android:layout_marginTop="-75dp"/>
+            <TextView
+                android:id="@+id/login_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="@string/login"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"/>
 
 
 
-        <EditText
-            android:id="@+id/login_uname_ET"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/username"
-            android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/login_uname_ET"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/username"
+                    android:inputType="textPersonName" />
+
+
+                <EditText
+                    android:id="@+id/login_pword_ET"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="10dp"/>
 
 
 
-
-
-        <EditText
-            android:id="@+id/login_pword_ET"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:layout_marginBottom="30dp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/paleton_blue_light"
+                android:weightSum="1">
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/paleton_blueish"
+                android:weightSum="1">
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/paleton_purp_light"
+                android:weightSum="1">
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/paleton_yellow_light"
+                android:weightSum="1">
+            </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@color/paleton_blue_light"
-            android:weightSum="1">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/login_enter_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/brightYellow"
+                android:text="@string/login" />
+
+
+            <Button
+                android:id="@+id/sign_up_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/brightYellow"
+                android:text="@string/signup" />
         </LinearLayout>
 
         <LinearLayout
@@ -92,36 +164,18 @@
             android:background="@color/paleton_yellow_light"
             android:weightSum="1">
         </LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:weightSum="2">
-
-    <Button
-        android:id="@+id/login_enter_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/brightYellow"
-        android:text="@string/login" />
-
-
-    <Button
-        android:id="@+id/sign_up_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/brightYellow"
-        android:text="@string/signup" />
-</LinearLayout>
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:background="@color/paleton_yellow_light"
+            android:background="@color/paleton_purp_light"
+            android:weightSum="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/paleton_blueish"
             android:weightSum="1">
         </LinearLayout>
         <LinearLayout
@@ -131,7 +185,34 @@
             android:background="@color/paleton_blue_light"
             android:weightSum="1">
         </LinearLayout>
-
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/paleton_blue_light"
+            android:weightSum="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/paleton_blueish"
+            android:weightSum="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/paleton_purp_light"
+            android:weightSum="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/paleton_yellow_light"
+            android:weightSum="1">
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

@@ -204,7 +204,7 @@ public class CreateEvent extends AppCompatActivity {
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                                 // set day of month , month and year value in the edit text
 
-                                datestring = year + "-" + (monthOfYear+1) + "-" + dayOfMonth;
+                                datestring = year + "-" + (monthOfYear+1) + "-" + dayOfMonth  ;
                                 date.setText(datestring);
                             }
                         }, mYear, mMonth, mDay);
