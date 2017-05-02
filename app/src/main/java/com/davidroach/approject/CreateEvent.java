@@ -144,31 +144,8 @@ public class CreateEvent extends AppCompatActivity {
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                                String timeSet = "";
-
-                                if (hourOfDay > 12) {
-                                    hourOfDay -= 12;
-                                    timeSet = "PM";
-                                } else if (hourOfDay == 0) {
-                                    hourOfDay += 12;
-                                    timeSet = "AM";
-                                } else if (hourOfDay == 12){
-                                    timeSet = "PM";
-                                }else{
-                                    timeSet = "AM";
-                                }
-
-                                String min = "";
-                                if (minute < 10) {
-                                    min = "0" + minute;
-                                }else{
-                                    min = String.valueOf(minute);
-                                }
-
-                                String aTime = new StringBuilder().append(hourOfDay).append(':')
-                                        .append(min ).append(" ").append(timeSet).toString();
-                                time.setText(aTime);
-
+                                timestring = hourOfDay + ":" + minute;
+                                time.setText(timestring);
                             }
                         }, hour, minute, false);
                 timePickerDialog.show();
