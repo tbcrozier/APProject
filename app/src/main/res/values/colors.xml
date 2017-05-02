@@ -31,6 +31,9 @@
     <color name="paleton_tiel" type="color">#209FD0</color>
     <color name="paleton_purp" type="color">#662CD7</color>
     <color name="paleton_purp_light" type="color">#9D77E7</color>
+    <color name="paleton_yellow_light" type="color">#FFDE00</color>
+    <color name="paleton_blue_light" type="color">#2778D3</color>
+
 
 
 </resources>

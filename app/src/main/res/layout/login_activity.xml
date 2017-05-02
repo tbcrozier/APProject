@@ -7,14 +7,38 @@
     android:gravity="center"
     >
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/paleton_yellow_light"
+        android:weightSum="1">
+    </LinearLayout>
+
     <TextView
         android:id="@+id/title_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sport Event Tracker"
+        android:text="@string/sport_tracker"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="36sp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/paleton_yellow_light"
+        android:weightSum="1">
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/paleton_blue_light"
+        android:weightSum="1">
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,12 +77,26 @@
             android:inputType="textPassword"
             android:layout_marginBottom="30dp"/>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/paleton_blue_light"
+            android:weightSum="1">
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/paleton_yellow_light"
+            android:weightSum="1">
+        </LinearLayout>
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_marginTop="10dp"
     android:weightSum="2">
 
     <Button
@@ -66,7 +104,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/darkorange"
+        android:background="@color/brightYellow"
         android:text="@string/login" />
 
 
@@ -75,9 +113,25 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/darkorange"
+        android:background="@color/brightYellow"
         android:text="@string/signup" />
 </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/paleton_yellow_light"
+            android:weightSum="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/paleton_blue_light"
+            android:weightSum="1">
+        </LinearLayout>
+
 
     </LinearLayout>
 </LinearLayout>

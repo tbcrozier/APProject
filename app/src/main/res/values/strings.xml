@@ -6,6 +6,9 @@
     <!--Login Activity Strings-->
     <string name="login">Login</string>
     <string name="signup">Sign-Up</string>
+    <string name="sport_tracker">Sport Event Tracker</string>
+
+
 
     <!--About Activity Strings-->
     <string name="about">About</string>
